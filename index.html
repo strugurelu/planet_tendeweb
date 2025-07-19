@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planet Tende da Sole</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #0b2b38;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #0b2b38;
+    }
+
+    header img {
+      max-width: 200px;
+    }
+
+    header h1 {
+      color: #f9b233;
+      margin-top: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 300px;
+      background: linear-gradient(to bottom, #f9b233, #0b2b38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .tenda {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        #f9b233,
+        #f9b233 20px,
+        #0b2b38 20px,
+        #0b2b38 40px
+      );
+      animation: tendaAnim 3s infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes tendaAnim {
+      0% { transform: translateY(-20%); }
+      100% { transform: translateY(20%); }
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-text h2 {
+      font-size: 2em;
+      color: #fff;
+    }
+
+    /* Gallery */
+    .gallery {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      color: #f9b233;
+      margin-bottom: 20px;
+    }
+
+    .gallery img {
+      max-width: 45%;
+      margin: 10px;
+      border-radius: 10px;
+      border: 3px solid #f9b233;
+    }
+
+    /* Contact */
+    .contact {
+      background-color: #123945;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #f9b233;
+      margin-bottom: 20px;
+    }
+
+    .contact form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact input, .contact textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      padding: 10px;
+      background-color: #f9b233;
+      border: none;
+      border-radius: 5px;
+      color: #0b2b38;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0b2b38;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Planet Tende da Sole">
+    <h1>Planet Tende da Sole</h1>
+    <p>Tende di un altro pianeta</p>
+  </header>
+
+  <section class="hero">
+    <div class="tenda"></div>
+    <div class="hero-text">
+      <h2>Protezione e Design per la Tua Casa</h2>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>Prima & Dopo</h2>
+    <img src="prima1.jpg" alt="Prima 1">
+    <img src="dopo1.jpg" alt="Dopo 1">
+    <img src="prima2.jpg" alt="Prima 2">
+    <img src="dopo2.jpg" alt="Dopo 2">
+  </section>
+
+  <section class="contact">
+    <h2>Contattaci</h2>
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Messaggio" rows="5" required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati.
+    powered by STRGR
+  </footer>
+</body>
+</html>

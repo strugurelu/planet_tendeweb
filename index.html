@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Tende da Sole</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
@@ -17,14 +15,14 @@
     }
 
     body {
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #0b2b38;
+      color: #fff;
     }
 
     header {
       text-align: center;
       padding: 20px;
-      background-color: #006D7F;
+      background-color: #0b2b38;
     }
 
     header img {
@@ -36,16 +34,11 @@
       margin-top: 10px;
     }
 
-    header p {
-      color: #fff;
-      font-size: 1.1rem;
-    }
-
     /* Hero Section */
     .hero {
       position: relative;
       height: 300px;
-      background: linear-gradient(to bottom, #006D7F, #004E59);
+      background: linear-gradient(to bottom, #f9b233, #0b2b38);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,8 +53,8 @@
         45deg,
         #f9b233,
         #f9b233 20px,
-        #006D7F 20px,
-        #006D7F 40px
+        #0b2b38 20px,
+        #0b2b38 40px
       );
       animation: tendaAnim 3s infinite alternate;
       z-index: 1;
@@ -76,7 +69,6 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      color: #fff;
     }
 
     .hero-text h2 {
@@ -91,7 +83,7 @@
     }
 
     .gallery h2 {
-      color: #006D7F;
+      color: #f9b233;
       margin-bottom: 20px;
     }
 
@@ -100,62 +92,11 @@
       margin: 10px;
       border-radius: 10px;
       border: 3px solid #f9b233;
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Services Section */
-    .services {
-      padding: 40px 20px;
-      background-color: #ffffff;
-      text-align: center;
-    }
-
-    .services h2 {
-      color: #006D7F;
-      margin-bottom: 30px;
-    }
-
-    .service-cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .service-card {
-      background: #006D7F;
-      color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      width: 200px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .service-card i {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      color: #f9b233;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
     }
 
     /* Contact */
     .contact {
-      background-color: #004E59;
+      background-color: #123945;
       padding: 40px 20px;
       text-align: center;
     }
@@ -192,7 +133,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #006D7F;
+      background-color: #0b2b38;
       color: #ccc;
       font-size: 0.9em;
     }
@@ -224,9 +165,6 @@
       .gallery img {
         max-width: 90%;
       }
-      .service-card {
-        width: 150px;
-      }
     }
   </style>
 </head>
@@ -250,18 +188,6 @@
     <img src="images/dopo1.jpeg" alt="Dopo 1">
     <img src="images/prima2.jpeg" alt="Prima 2">
     <img src="images/dopo2.jpeg" alt="Dopo 2">
-  </section>
-
-  <section class="services">
-    <h2>I nostri Servizi</h2>
-    <div class="service-cards">
-      <div class="service-card"><i class="fas fa-sun"></i> Tende da sole</div>
-      <div class="service-card"><i class="fas fa-paint-roller"></i> Cambio tessuto</div>
-      <div class="service-card"><i class="fas fa-bug"></i> Zanzariere</div>
-      <div class="service-card"><i class="fas fa-layer-group"></i> Coperture in PVC</div>
-      <div class="service-card"><i class="fas fa-tree"></i> Pergole</div>
-      <div class="service-card"><i class="fas fa-blinds"></i> Veneziane</div>
-    </div>
   </section>
 
   <section class="contact">

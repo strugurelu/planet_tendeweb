@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Tende da Sole</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
       --primary: #006D7F;
       --accent: #f9b233;
-      --text-light: #ffffff;
-      --dark-bg: #004f5c;
+      --dark: #004e5a;
     }
 
     * {
@@ -21,44 +21,39 @@
     }
 
     body {
-      background-color: var(--dark-bg);
-      color: var(--text-light);
+      background-color: var(--dark);
+      color: #fff;
+      line-height: 1.5;
     }
 
     /* HEADER */
     header {
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       background-color: var(--primary);
     }
 
     header img {
-      max-width: 200px;
-      animation: fadeInDown 1.5s ease-in-out;
+      max-width: 180px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     header h1 {
       color: var(--accent);
       margin-top: 10px;
-      font-size: 2.2em;
+      font-size: 2em;
     }
 
     header p {
-      margin-top: 5px;
       font-size: 1.1em;
       color: #eaeaea;
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* HERO */
+    /* HERO SECTION */
     .hero {
       position: relative;
       height: 300px;
-      background: var(--primary);
+      background: linear-gradient(to bottom, var(--accent), var(--primary));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -67,27 +62,22 @@
 
     .tenda {
       position: absolute;
-      width: 120%;
-      height: 120%;
-      top: -10%;
-      left: -10%;
+      width: 100%;
+      height: 100%;
       background: repeating-linear-gradient(
-        0deg,
+        45deg,
         var(--accent),
-        var(--accent) 25px,
-        var(--primary) 25px,
-        var(--primary) 50px
+        var(--accent) 20px,
+        var(--primary) 20px,
+        var(--primary) 40px
       );
-      animation: wave 3s ease-in-out infinite alternate;
+      animation: tendaAnim 3s infinite alternate;
       z-index: 1;
-      opacity: 0.8;
-      border-bottom-left-radius: 50% 10%;
-      border-bottom-right-radius: 50% 10%;
     }
 
-    @keyframes wave {
-      0% { transform: translateY(-10px); }
-      100% { transform: translateY(10px); }
+    @keyframes tendaAnim {
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(10%); }
     }
 
     .hero-text {
@@ -97,59 +87,52 @@
     }
 
     .hero-text h2 {
-      font-size: 2.3em;
-      color: var(--text-light);
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      animation: fadeInUp 2s ease;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-size: 2em;
+      color: #fff;
+      animation: fadeInUp 1.5s ease-in-out;
     }
 
     /* GALLERY */
     .gallery {
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
-      background-color: var(--dark-bg);
+      background: #004e5a;
     }
 
     .gallery h2 {
       color: var(--accent);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       font-size: 2em;
     }
 
     .gallery img {
-      max-width: 40%;
+      max-width: 45%;
       margin: 10px;
       border-radius: 10px;
       border: 3px solid var(--accent);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
 
-    /* SERVICES */
+    /* SERVICES (FRAMES) */
     .services {
-      padding: 60px 20px;
-      background-color: #004f5c;
+      padding: 40px 20px;
+      background-color: var(--primary);
       text-align: center;
     }
 
     .services h2 {
       color: var(--accent);
-      font-size: 2.2em;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      font-size: 2em;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       max-width: 1000px;
       margin: auto;
@@ -160,11 +143,21 @@
       color: #fff;
       padding: 30px 20px;
       border-radius: 15px;
+      text-align: center;
       font-size: 1.1em;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .service-card i {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      display: block;
+      color: var(--accent);
+      transition: transform 0.4s ease, color 0.4s ease;
     }
 
     .service-card:hover {
@@ -173,16 +166,22 @@
       background: linear-gradient(145deg, #008a9e, var(--primary));
     }
 
+    .service-card:hover i {
+      transform: rotate(15deg) scale(1.2);
+      color: #fff;
+    }
+
     /* CONTACT */
     .contact {
-      background-color: #005866;
-      padding: 50px 20px;
+      background-color: #004e5a;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .contact h2 {
       color: var(--accent);
       margin-bottom: 20px;
+      font-size: 2em;
     }
 
     .contact form {
@@ -197,8 +196,6 @@
       margin: 10px 0;
       border: none;
       border-radius: 5px;
-      font-size: 1em;
-      outline: none;
     }
 
     .contact button {
@@ -209,11 +206,11 @@
       color: var(--primary);
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: background 0.3s ease;
     }
 
     .contact button:hover {
-      transform: scale(1.05);
+      background-color: #ffd166;
     }
 
     /* FOOTER */
@@ -223,6 +220,17 @@
       background-color: var(--primary);
       color: #ccc;
       font-size: 0.9em;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -254,16 +262,16 @@
     <img src="images/dopo2.jpeg" alt="Dopo 2">
   </section>
 
-  <!-- NUEVA SECCIÓN DE SERVICIOS -->
+  <!-- SERVICES SECTION -->
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card">Tende da sole</div>
-      <div class="service-card">Cambio tessuto</div>
-      <div class="service-card">Zanzariere</div>
-      <div class="service-card">Coperture in PVC</div>
-      <div class="service-card">Pergole</div>
-      <div class="service-card">Veneziane</div>
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
+      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
+      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
+      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
+      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
+      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
     </div>
   </section>
 
@@ -279,7 +287,6 @@
 
   <footer>
     © 2025 Planet Tende da Sole. Tutti i diritti riservati.
-    Powered by STRGRWEB.COM
   </footer>
 </body>
 </html>

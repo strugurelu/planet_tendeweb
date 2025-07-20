@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Tende da Sole</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
+    :root {
+      --primary: #006D7F;
+      --accent: #f9b233;
+      --dark: #004e5a;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,30 +21,39 @@
     }
 
     body {
-      background-color: #0b2b38;
+      background-color: var(--dark);
       color: #fff;
+      line-height: 1.5;
     }
 
+    /* HEADER */
     header {
       text-align: center;
       padding: 20px;
-      background-color: #0b2b38;
+      background-color: var(--primary);
     }
 
     header img {
-      max-width: 200px;
+      max-width: 180px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     header h1 {
-      color: #f9b233;
+      color: var(--accent);
       margin-top: 10px;
+      font-size: 2em;
     }
 
-    /* Hero Section */
+    header p {
+      font-size: 1.1em;
+      color: #eaeaea;
+    }
+
+    /* HERO SECTION */
     .hero {
       position: relative;
       height: 300px;
-      background: linear-gradient(to bottom, #f9b233, #0b2b38);
+      background: linear-gradient(to bottom, var(--accent), var(--primary));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -51,18 +66,18 @@
       height: 100%;
       background: repeating-linear-gradient(
         45deg,
-        #f9b233,
-        #f9b233 20px,
-        #0b2b38 20px,
-        #0b2b38 40px
+        var(--accent),
+        var(--accent) 20px,
+        var(--primary) 20px,
+        var(--primary) 40px
       );
       animation: tendaAnim 3s infinite alternate;
       z-index: 1;
     }
 
     @keyframes tendaAnim {
-      0% { transform: translateY(-20%); }
-      100% { transform: translateY(20%); }
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(10%); }
     }
 
     .hero-text {
@@ -74,36 +89,99 @@
     .hero-text h2 {
       font-size: 2em;
       color: #fff;
+      animation: fadeInUp 1.5s ease-in-out;
     }
 
-    /* Gallery */
+    /* GALLERY */
     .gallery {
       padding: 40px 20px;
       text-align: center;
+      background: #004e5a;
     }
 
     .gallery h2 {
-      color: #f9b233;
+      color: var(--accent);
       margin-bottom: 20px;
+      font-size: 2em;
     }
 
     .gallery img {
       max-width: 45%;
       margin: 10px;
       border-radius: 10px;
-      border: 3px solid #f9b233;
+      border: 3px solid var(--accent);
+      transition: transform 0.3s ease;
     }
 
-    /* Contact */
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* SERVICES (FRAMES) */
+    .services {
+      padding: 40px 20px;
+      background-color: var(--primary);
+      text-align: center;
+    }
+
+    .services h2 {
+      color: var(--accent);
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, var(--primary), #008a9e);
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .service-card i {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      display: block;
+      color: var(--accent);
+      transition: transform 0.4s ease, color 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(145deg, #008a9e, var(--primary));
+    }
+
+    .service-card:hover i {
+      transform: rotate(15deg) scale(1.2);
+      color: #fff;
+    }
+
+    /* CONTACT */
     .contact {
-      background-color: #123945;
+      background-color: #004e5a;
       padding: 40px 20px;
       text-align: center;
     }
 
     .contact h2 {
-      color: #f9b233;
+      color: var(--accent);
       margin-bottom: 20px;
+      font-size: 2em;
     }
 
     .contact form {
@@ -122,18 +200,24 @@
 
     .contact button {
       padding: 10px;
-      background-color: #f9b233;
+      background-color: var(--accent);
       border: none;
       border-radius: 5px;
-      color: #0b2b38;
+      color: var(--primary);
       font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
+    .contact button:hover {
+      background-color: #ffd166;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #0b2b38;
+      background-color: var(--primary);
       color: #ccc;
       font-size: 0.9em;
     }
@@ -155,10 +239,22 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s;
       z-index: 999;
+      text-decoration: none;
     }
 
     .facebook-btn:hover {
       transform: scale(1.1);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -190,6 +286,19 @@
     <img src="images/dopo2.jpeg" alt="Dopo 2">
   </section>
 
+  <!-- SERVICES SECTION -->
+  <section class="services">
+    <h2>I Nostri Servizi</h2>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
+      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
+      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
+      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
+      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
+      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
+    </div>
+  </section>
+
   <section class="contact">
     <h2>Contattaci</h2>
     <form>
@@ -202,10 +311,11 @@
 
   <footer>
     © 2025 Planet Tende da Sole. Tutti i diritti riservati.
+    Powered by Strgrweb.com
   </footer>
 
   <!-- Facebook Button -->
-  <a href="https://www.facebook.com/profile.php?id=61567860716015&mibextid=wwXIfr" class="facebook-btn" target="_blank">
+  <a href="https://www.facebook.com/profile.php?id=61567860716015" class="facebook-btn" target="_blank">
     <i class="fab fa-facebook-f"></i>
   </a>
 </body>

@@ -7,18 +7,41 @@ body {
 }
 
 header.hero {
-  padding: 30px;
-  background: linear-gradient(to bottom, #0b1d26, #142b38);
-  animation: slideDown 1.5s ease-out;
+  position: relative;
+  padding: 60px 30px 30px;
+  background: linear-gradient(to bottom, #0b1d26, #004d58);
+  overflow: visible;
+}
+
+header.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 120px;
+  background: linear-gradient(135deg, #006d7f 0%, #004d58 100%);
+  border-radius: 0 0 120px 120px / 80px 80px 40px 40px;
+  animation: desplegarToldo 2s ease forwards;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
+  position: relative;
   max-width: 150px;
+  z-index: 2;
+}
+
+h1, p {
+  position: relative;
+  z-index: 2;
+  margin: 10px 0;
 }
 
 h1 {
   font-size: 2.5em;
-  margin: 10px 0;
 }
 
 p {
@@ -27,6 +50,8 @@ p {
 
 .gallery {
   padding: 20px;
+  position: relative;
+  z-index: 10; /* Fotos por encima del toldo */
 }
 
 .gallery h2 {
@@ -61,7 +86,7 @@ p {
 
 .contact {
   padding: 30px;
-  background-color: #142b38;
+  background-color: #006d7f;
 }
 
 .contact form {
@@ -96,13 +121,20 @@ footer {
   font-size: 0.9em;
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-50px);
+@keyframes desplegarToldo {
+  0% {
+    height: 0;
     opacity: 0;
+    border-radius: 0 0 0 0 / 0 0 0 0;
   }
-  to {
-    transform: translateY(0);
+  70% {
+    height: 130px;
     opacity: 1;
+    border-radius: 0 0 130px 130px / 90px 90px 40px 40px;
+  }
+  100% {
+    height: 120px;
+    opacity: 1;
+    border-radius: 0 0 120px 120px / 80px 80px 40px 40px;
   }
 }

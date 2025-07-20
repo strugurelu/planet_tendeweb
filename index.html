@@ -4,61 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Planet Tende da Sole</title>
+  <meta name="description" content="Tende da sole innovative: prima e dopo, installazioni professionali e contatto rapido." />
+  <link rel="preload" href="images/logo.png" as="image" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <!-- El toldo animado está aquí con ::before en CSS -->
-    <img src="images/logo.png" alt="Planet Tende" class="logo" />
-    <h1>Planet Tende da Sole</h1>
-    <p>Tende di un altro pianeta</p>
+  <a href="#contenuto" class="skip-link">Salta al contenuto</a>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="logo-wrapper" aria-label="Logo Planet Tende da Sole">
+        <img src="images/logo.png" alt="Planet Tende da Sole" class="logo" />
+      </div>
+      <div class="hero-text">
+        <h1 class="headline" aria-live="polite">Planet Tende da Sole</h1>
+        <p class="tagline">Tende di un altro pianeta</p>
+        <a href="#gallery" class="btn primary smooth">Guarda i progetti</a>
+      </div>
+      <!-- TOLDO animado -->
+      <div class="toldo" aria-hidden="true">
+        <div class="toldo-stripes">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
+    </div>
   </header>
 
-  <section class="gallery">
-    <h2>Prima e Dopo</h2>
-    <div class="image-pair">
-      <div class="img-box">
-        <img src="images/prima1.jpeg" alt="Prima" />
-        <p>PRIMA</p>
+  <main id="contenuto">
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-intro">
+        <h2 id="gallery-title" class="section-title">Prima &amp; Dopo</h2>
+        <p class="section-subtitle">Trasformazioni reali dei nostri lavori professionali.</p>
       </div>
-      <div class="img-box">
-        <img src="images/dopo1.jpeg" alt="Dopo" />
-        <p>DOPO</p>
+      <div class="gallery-grid">
+        <!-- Par 1 -->
+        <article class="before-after card reveal" aria-label="Confronto installazione 1">
+          <figure class="before">
+            <img src="images/prima1.jpeg" alt="Stato prima dell'installazione 1" loading="lazy" />
+            <figcaption>PRIMA</figcaption>
+          </figure>
+          <figure class="after">
+            <img src="images/dopo1.jpeg" alt="Risultato dopo l'installazione 1" loading="lazy" />
+            <figcaption>DOPO</figcaption>
+          </figure>
+        </article>
+        <!-- Par 2 -->
+        <article class="before-after card reveal" aria-label="Confronto installazione 2">
+          <figure class="before">
+            <img src="images/prima2.jpeg" alt="Stato prima dell'installazione 2" loading="lazy" />
+            <figcaption>PRIMA</figcaption>
+          </figure>
+            <figure class="after">
+            <img src="images/dopo2.jpeg" alt="Risultato dopo l'installazione 2" loading="lazy" />
+            <figcaption>DOPO</figcaption>
+          </figure>
+        </article>
+        <!-- Puedes duplicar más pares siguiendo la estructura -->
       </div>
-    </div>
-    <div class="image-pair">
-      <div class="img-box">
-        <img src="images/prima2.jpeg" alt="Prima" />
-        <p>PRIMA</p>
-      </div>
-      <div class="img-box">
-        <img src="images/dopo2.jpeg" alt="Dopo" />
-        <p>DOPO</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact">
-    <h2>Contattaci</h2>
-    <form>
-      <input type="text" name="name" placeholder="Il tuo nome" required />
-      <input type="email" name="email" placeholder="La tua email" required />
-      <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
+    <section class="cta-band reveal" aria-label="Contattaci subito">
+      <div class="cta-content">
+        <h2>Hai un progetto in mente?</h2>
+        <p>Richiedi un preventivo gratuito e scopri come possiamo trasformare i tuoi spazi esterni.</p>
+        <a href="#contatto" class="btn outline smooth">Richiedi Preventivo</a>
+      </div>
+    </section>
 
-    <!-- Botón Facebook -->
-    <a
-      href="https://www.facebook.com/profile.php?id=61567860716015"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="facebook-btn"
-      >Seguici su Facebook</a
-    >
-  </section>
+    <section class="contact-section" id="contatto" aria-labelledby="contact-title">
+      <div class="contact-wrapper">
+        <div class="contact-info reveal">
+          <h2 id="contact-title" class="section-title">Contattaci</h2>
+          <p class="lead">Rispondiamo rapidamente alle tue richieste.</p>
+          <ul class="contact-list" aria-label="Dettagli di contatto">
+            <li><strong>Email:</strong> <a href="mailto:info@planettende.it">info@planettende.it</a></li>
+            <li><strong>Telefono:</strong> <a href="tel:+391234567890">+39 123 456 7890</a></li>
+            <li><strong>Orari:</strong> Lun–Ven 09:00–18:00</li>
+          </ul>
+          <a href="https://www.facebook.com/profile.php?id=61567860716015" target="_blank" rel="noopener noreferrer" class="facebook-btn" aria-label="Seguici su Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12.06C22 6.49 17.52 2 11.94 2S2 6.49 2 12.06c0 5 3.66 9.14 8.44 9.94v-7.03H8.08v-2.9h2.36v-2.2c0-2.33 1.39-3.62 3.52-3.62 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46v1.88h2.59l-.41 2.9h-2.18V22c4.78-.8 8.44-4.94 8.44-9.94Z"/></svg>
+            <span>Facebook</span>
+          </a>
+        </div>
 
-  <footer>
+        <form class="contact-form card reveal" action="#" method="post" novalidate aria-describedby="contact-title">
+          <div class="form-field">
+            <input type="text" id="nome" name="name" required placeholder=" " />
+            <label for="nome">Nome</label>
+            <span class="bar"></span>
+          </div>
+          <div class="form-field">
+            <input type="email" id="email" name="email" required placeholder=" " />
+            <label for="email">Email</label>
+            <span class="bar"></span>
+          </div>
+          <div class="form-field">
+            <textarea id="messaggio" name="message" rows="5" required placeholder=" "></textarea>
+            <label for="messaggio">Messaggio</label>
+            <span class="bar"></span>
+          </div>
+          <button type="submit" class="btn primary full">Invia</button>
+          <p class="form-note" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <p>&copy; 2025 Planet Tende da Sole. Tutti i diritti riservati.</p>
+    <nav aria-label="Link utili" class="footer-nav">
+      <a href="#top" class="smooth">Inizio</a>
+      <a href="#gallery" class="smooth">Gallery</a>
+      <a href="#contatto" class="smooth">Contatto</a>
+    </nav>
   </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

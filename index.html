@@ -76,12 +76,8 @@
     }
 
     @keyframes tendaAnim {
-      0% {
-        transform: translateY(-10%);
-      }
-      100% {
-        transform: translateY(10%);
-      }
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(10%); }
     }
 
     .hero-text {
@@ -119,6 +115,25 @@
 
     .gallery img:hover {
       transform: scale(1.05);
+    }
+
+    .btn-ver-mas {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      background-color: var(--accent);
+      border: none;
+      border-radius: 30px;
+      color: var(--primary);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-ver-mas:hover {
+      background-color: #ffd166;
     }
 
     /* SERVICES (FRAMES) */
@@ -195,8 +210,7 @@
       flex-direction: column;
     }
 
-    .contact input,
-    .contact textarea {
+    .contact input, .contact textarea {
       padding: 10px;
       margin: 10px 0;
       border: none;
@@ -218,25 +232,24 @@
       background-color: #ffd166;
     }
 
-    /* MAP SECTION */
-    .map-section {
-      padding: 40px 20px;
+    /* MAP */
+    .mapa {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto 40px;
       text-align: center;
-      background: var(--dark);
     }
 
-    .map-section h2 {
+    .mapa h2 {
       color: var(--accent);
-      margin-bottom: 20px;
-      font-size: 2em;
+      margin-bottom: 15px;
     }
 
-    .map-section iframe {
+    .mapa iframe {
       border: 0;
-      border-radius: 12px;
       width: 100%;
-      max-width: 900px;
-      height: 450px;
+      height: 350px;
+      border-radius: 10px;
     }
 
     /* FOOTER */
@@ -250,23 +263,13 @@
 
     /* ANIMATIONS */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -277,6 +280,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <img src="images/logo.png" alt="Planet Tende da Sole" />
     <h1>Planet Tende da Sole</h1>
@@ -294,57 +298,43 @@
     <h2>Prima & Dopo</h2>
     <img src="images/prima1.jpeg" alt="Prima 1" />
     <img src="images/dopo1.jpeg" alt="Dopo 1" />
+    <br />
+    <a href="prima-dopo.html" class="btn-ver-mas">Ver más</a>
   </section>
-
-  <button onclick="location.href='prima-dopo.html'" style="
-    display: block;
-    margin: 20px auto;
-    background-color: var(--accent);
-    color: var(--primary);
-    border: none;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  " onmouseover="this.style.backgroundColor='#ffd166'" onmouseout="this.style.backgroundColor=var('--accent')">
-    Vedi di più
-  </button>
 
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
-      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
-      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
-      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
-      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
-      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da Sole</p></div>
+      <div class="service-card"><i class="fas fa-home"></i><p>Tende per Interni</p></div>
+      <div class="service-card"><i class="fas fa-umbrella-beach"></i><p>Tende da Esterni</p></div>
+      <div class="service-card"><i class="fas fa-tools"></i><p>Montaggio Professionale</p></div>
     </div>
   </section>
 
   <section class="contact">
     <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required />
-      <input type="email" name="_replyto" placeholder="Email" required />
-      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
+    <form>
+      <input type="text" placeholder="Nome" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Messaggio" rows="5" required></textarea>
       <button type="submit">Invia</button>
     </form>
   </section>
 
-  <section class="map-section">
+  <section class="mapa">
     <h2>Dove Trovarci</h2>
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.871206835365!2d12.82558271554966!3d45.53160137910107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477aeee5369d5d49%3A0x48a6a26e122f2378!2sVia%20Boa%2016%2C%2030020%20Pramaggiore%20VE%2C%20Italia!5e0!3m2!1ses!2ses!4v1626785067771!5m2!1ses!2ses"
-      allowfullscreen=""
+      src="https://www.google.com/maps?q=Via+Boa,+16,+30020+Pramaggiore+VE,+Italia&output=embed"
+      allowfullscreen
       loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </section>
 
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. Powered by strgrweb.com
+    Powered by strgrweb.com
   </footer>
+
 </body>
 </html>

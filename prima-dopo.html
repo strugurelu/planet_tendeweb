@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prima & Dopo - Planet Tende da Sole</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -14,38 +13,45 @@
       color: #fff;
       text-align: center;
     }
+
     header {
       padding: 20px;
       background-color: #006D7F;
     }
+
     header h1 {
       color: #f9b233;
-      margin: 0;
     }
+
     .gallery {
-      padding: 40px 20px;
+      padding: 20px;
     }
-    .gallery h2 {
-      color: #f9b233;
-      margin-bottom: 20px;
-    }
+
     .gallery img {
       max-width: 45%;
       margin: 10px;
       border-radius: 10px;
       border: 3px solid #f9b233;
+      transition: transform 0.3s ease;
     }
-    .btn-home {
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .back-btn {
       display: inline-block;
-      margin-top: 20px;
+      margin: 20px;
       padding: 10px 20px;
       background-color: #f9b233;
       color: #004e5a;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 25px;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
-    .btn-home:hover {
+
+    .back-btn:hover {
       background-color: #ffd166;
     }
   </style>
@@ -54,13 +60,22 @@
   <header>
     <h1>Prima & Dopo</h1>
   </header>
+  
   <section class="gallery">
-    <h2>I Nostri Lavori</h2>
     <img src="images/prima1.jpeg" alt="Prima 1">
     <img src="images/dopo1.jpeg" alt="Dopo 1">
     <img src="images/prima2.jpeg" alt="Prima 2">
     <img src="images/dopo2.jpeg" alt="Dopo 2">
+    <img src="images/prima3.jpeg" alt="Prima 3">
+    <img src="images/dopo3.jpeg" alt="Dopo 3">
+    <img src="images/prima4.jpeg" alt="Prima 4">
+    <img src="images/dopo4.jpeg" alt="Dopo 4">
+    <img src="images/prima5.jpeg" alt="Prima 5">
+    <img src="images/dopo5.jpeg" alt="Dopo 5">
+    <img src="images/prima6.jpeg" alt="Prima 6">
+    <img src="images/dopo6.jpeg" alt="Dopo 6">
   </section>
-  <a href="index.html" class="btn-home">Torna alla Home</a>
+
+  <a href="index.html" class="back-btn">← Torna alla Home</a>
 </body>
 </html>

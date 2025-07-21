@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <style>
     :root {
       --primary: #006D7F;
@@ -26,6 +26,7 @@
       line-height: 1.5;
     }
 
+    /* HEADER */
     header {
       text-align: center;
       padding: 20px;
@@ -34,6 +35,7 @@
 
     header img {
       max-width: 180px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     header h1 {
@@ -47,6 +49,7 @@
       color: #eaeaea;
     }
 
+    /* HERO SECTION */
     .hero {
       position: relative;
       height: 300px;
@@ -73,8 +76,12 @@
     }
 
     @keyframes tendaAnim {
-      0% { transform: translateY(-10%); }
-      100% { transform: translateY(10%); }
+      0% {
+        transform: translateY(-10%);
+      }
+      100% {
+        transform: translateY(10%);
+      }
     }
 
     .hero-text {
@@ -86,56 +93,35 @@
     .hero-text h2 {
       font-size: 2em;
       color: #fff;
+      animation: fadeInUp 1.5s ease-in-out;
     }
 
-    /* --- PRIMA & DOPO --- */
-    .prima-dopo-preview {
-      text-align: center;
+    /* GALLERY */
+    .gallery {
       padding: 40px 20px;
-      background-color: #005c6b;
+      text-align: center;
+      background: #004e5a;
     }
 
-    .prima-dopo-preview h2 {
+    .gallery h2 {
       color: var(--accent);
       margin-bottom: 20px;
       font-size: 2em;
     }
 
-    .prima-dopo-images {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .prima-dopo-images img {
-      width: 300px;
+    .gallery img {
+      max-width: 45%;
+      margin: 10px;
       border-radius: 10px;
       border: 3px solid var(--accent);
       transition: transform 0.3s ease;
     }
 
-    .prima-dopo-images img:hover {
+    .gallery img:hover {
       transform: scale(1.05);
     }
 
-    .btn-gallery {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .btn-gallery:hover {
-      background-color: #ffd166;
-    }
-
-    /* --- SERVIZI --- */
+    /* SERVICES (FRAMES) */
     .services {
       padding: 40px 20px;
       background-color: var(--primary);
@@ -165,7 +151,9 @@
       font-size: 1.1em;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      animation: fadeInUp 1s ease both;
     }
 
     .service-card i {
@@ -173,13 +161,21 @@
       margin-bottom: 10px;
       display: block;
       color: var(--accent);
+      transition: transform 0.4s ease, color 0.4s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(145deg, #008a9e, var(--primary));
     }
 
-    /* --- CONTACT --- */
+    .service-card:hover i {
+      transform: rotate(15deg) scale(1.2);
+      color: #fff;
+    }
+
+    /* CONTACT */
     .contact {
       background-color: #004e5a;
       padding: 40px 20px;
@@ -199,7 +195,8 @@
       flex-direction: column;
     }
 
-    .contact input, .contact textarea {
+    .contact input,
+    .contact textarea {
       padding: 10px;
       margin: 10px 0;
       border: none;
@@ -214,8 +211,35 @@
       color: var(--primary);
       font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
+    .contact button:hover {
+      background-color: #ffd166;
+    }
+
+    /* MAP SECTION */
+    .map-section {
+      padding: 40px 20px;
+      text-align: center;
+      background: var(--dark);
+    }
+
+    .map-section h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .map-section iframe {
+      border: 0;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 900px;
+      height: 450px;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
@@ -224,34 +248,37 @@
       font-size: 0.9em;
     }
 
-    footer a {
-      color: #ccc;
-      text-decoration: none;
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
-    .facebook-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #1877f2;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 1.5em;
-      text-align: center;
-      z-index: 100;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .facebook-btn:hover {
-      transform: scale(1.1);
-      background-color: #145db2;
+    @media (max-width: 768px) {
+      .gallery img {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole">
+    <img src="images/logo.png" alt="Planet Tende da Sole" />
     <h1>Planet Tende da Sole</h1>
     <p>Tende di un altro pianeta</p>
   </header>
@@ -263,15 +290,26 @@
     </div>
   </section>
 
-  <!-- SECCION PRIMA & DOPO PREVIEW -->
-  <section class="prima-dopo-preview">
+  <section class="gallery">
     <h2>Prima & Dopo</h2>
-    <div class="prima-dopo-images">
-      <img src="images/prima1.jpeg" alt="Prima 1">
-      <img src="images/dopo1.jpeg" alt="Dopo 1">
-    </div>
-    <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
+    <img src="images/prima1.jpeg" alt="Prima 1" />
+    <img src="images/dopo1.jpeg" alt="Dopo 1" />
   </section>
+
+  <button onclick="location.href='prima-dopo.html'" style="
+    display: block;
+    margin: 20px auto;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#ffd166'" onmouseout="this.style.backgroundColor=var('--accent')">
+    Vedi di più
+  </button>
 
   <section class="services">
     <h2>I Nostri Servizi</h2>
@@ -288,19 +326,25 @@
   <section class="contact">
     <h2>Contattaci</h2>
     <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="email" name="_replyto" placeholder="Email" required />
       <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
       <button type="submit">Invia</button>
     </form>
   </section>
 
-  <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
-  </footer>
+  <section class="map-section">
+    <h2>Dove Trovarci</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.871206835365!2d12.82558271554966!3d45.53160137910107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477aeee5369d5d49%3A0x48a6a26e122f2378!2sVia%20Boa%2016%2C%2030020%20Pramaggiore%20VE%2C%20Italia!5e0!3m2!1ses!2ses!4v1626785067771!5m2!1ses!2ses"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
 
-  <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
-    <i class="fab fa-facebook-f"></i>
-  </a>
+  <footer>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. Powered by strgrweb.com
+  </footer>
 </body>
 </html>

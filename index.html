@@ -88,6 +88,37 @@
       color: #fff;
     }
 
+    /* --- PRIMA & DOPO --- */
+    .prima-dopo-preview {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #005c6b;
+    }
+
+    .prima-dopo-preview h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .prima-dopo-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .prima-dopo-images img {
+      width: 300px;
+      border-radius: 10px;
+      border: 3px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .prima-dopo-images img:hover {
+      transform: scale(1.05);
+    }
+
     .btn-gallery {
       display: inline-block;
       margin-top: 20px;
@@ -104,6 +135,7 @@
       background-color: #ffd166;
     }
 
+    /* --- SERVIZI --- */
     .services {
       padding: 40px 20px;
       background-color: var(--primary);
@@ -147,6 +179,7 @@
       transform: translateY(-10px);
     }
 
+    /* --- CONTACT --- */
     .contact {
       background-color: #004e5a;
       padding: 40px 20px;
@@ -227,8 +260,17 @@
     <div class="tenda"></div>
     <div class="hero-text">
       <h2>Protezione e Design per la Tua Casa</h2>
-      <a href="prima-dopo.html" class="btn-gallery">Guarda Prima & Dopo</a>
     </div>
+  </section>
+
+  <!-- SECCION PRIMA & DOPO PREVIEW -->
+  <section class="prima-dopo-preview">
+    <h2>Prima & Dopo</h2>
+    <div class="prima-dopo-images">
+      <img src="images/prima1.jpeg" alt="Prima 1">
+      <img src="images/dopo1.jpeg" alt="Dopo 1">
+    </div>
+    <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
   </section>
 
   <section class="services">

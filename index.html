@@ -117,7 +117,30 @@
       transform: scale(1.05);
     }
 
-    /* SERVICES (FRAMES) */
+    /* BOTÓN PRIMA & DOPO */
+    .prima-dopo-link {
+      text-align: center;
+      padding: 20px;
+      background: #004e5a;
+    }
+
+    .btn-prima-dopo {
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-prima-dopo:hover {
+      background-color: #ffd166;
+      transform: scale(1.05);
+    }
+
+    /* SERVICES */
     .services {
       padding: 40px 20px;
       background-color: var(--primary);
@@ -213,31 +236,6 @@
       background-color: #ffd166;
     }
 
-    /* FACEBOOK BUTTON */
-    .facebook-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #1877f2;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, background 0.3s ease;
-      z-index: 1000;
-    }
-
-    .facebook-btn:hover {
-      background-color: #0d5ccf;
-      transform: scale(1.1);
-    }
-
     /* FOOTER */
     footer {
       text-align: center;
@@ -250,11 +248,32 @@
     footer a {
       color: var(--accent);
       text-decoration: none;
-      font-weight: bold;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    /* FACEBOOK BUTTON */
+    .facebook-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1877f2;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .facebook-btn:hover {
+      transform: scale(1.1);
     }
 
     /* ANIMATIONS */
@@ -297,7 +316,12 @@
     <img src="images/dopo2.jpeg" alt="Dopo 2">
   </section>
 
-  <!-- SERVICES SECTION -->
+  <!-- BOTÓN PRIMA & DOPO -->
+  <section class="prima-dopo-link">
+    <a href="prima-dopo.html" class="btn-prima-dopo">Vedi Prima & Dopo</a>
+  </section>
+
+  <!-- SERVICES -->
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
@@ -313,20 +337,19 @@
   <section class="contact">
     <h2>Contattaci</h2>
     <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="text" name="name" placeholder="Nome" required>
       <input type="email" name="email" placeholder="Email" required>
-      <textarea name="messaggio" placeholder="Messaggio" rows="5" required></textarea>
+      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
       <button type="submit">Invia</button>
     </form>
   </section>
 
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. <br>
-    Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
-  <!-- Facebook Button -->
-  <a class="facebook-btn" href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" aria-label="Facebook Planet Tende da Sole" rel="noopener noreferrer">
+  <!-- BOTÓN FACEBOOK -->
+  <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" class="facebook-btn" target="_blank">
     <i class="fab fa-facebook-f"></i>
   </a>
 </body>

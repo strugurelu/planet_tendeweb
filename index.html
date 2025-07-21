@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
   <style>
     :root {
-      --primary: #006D7F;
+      --primary: #006d7f;
       --accent: #f9b233;
       --dark: #004e5a;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
     }
-
     body {
       background-color: var(--dark);
       color: #fff;
       line-height: 1.5;
     }
-
-    /* HEADER */
     header {
       text-align: center;
       padding: 20px;
       background-color: var(--primary);
     }
-
     header img {
       max-width: 180px;
       animation: fadeIn 1.5s ease-in-out;
     }
-
     header h1 {
       color: var(--accent);
       margin-top: 10px;
       font-size: 2em;
     }
-
     header p {
       font-size: 1.1em;
       color: #eaeaea;
     }
-
-    /* HERO SECTION */
     .hero {
       position: relative;
       height: 300px;
@@ -59,7 +56,6 @@
       justify-content: center;
       overflow: hidden;
     }
-
     .tenda {
       position: absolute;
       width: 100%;
@@ -74,37 +70,34 @@
       animation: tendaAnim 3s infinite alternate;
       z-index: 1;
     }
-
     @keyframes tendaAnim {
-      0% { transform: translateY(-10%); }
-      100% { transform: translateY(10%); }
+      0% {
+        transform: translateY(-10%);
+      }
+      100% {
+        transform: translateY(10%);
+      }
     }
-
     .hero-text {
       position: relative;
       z-index: 2;
       text-align: center;
     }
-
     .hero-text h2 {
       font-size: 2em;
       color: #fff;
       animation: fadeInUp 1.5s ease-in-out;
     }
-
-    /* GALLERY */
     .gallery {
       padding: 40px 20px;
       text-align: center;
       background: #004e5a;
     }
-
     .gallery h2 {
       color: var(--accent);
       margin-bottom: 20px;
       font-size: 2em;
     }
-
     .gallery img {
       max-width: 45%;
       margin: 10px;
@@ -112,24 +105,19 @@
       border: 3px solid var(--accent);
       transition: transform 0.3s ease;
     }
-
     .gallery img:hover {
       transform: scale(1.05);
     }
-
-    /* SERVICES (FRAMES) */
     .services {
       padding: 40px 20px;
       background-color: var(--primary);
       text-align: center;
     }
-
     .services h2 {
       color: var(--accent);
       margin-bottom: 30px;
       font-size: 2em;
     }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -137,7 +125,6 @@
       max-width: 1000px;
       margin: auto;
     }
-
     .service-card {
       background: linear-gradient(145deg, var(--primary), #008a9e);
       color: #fff;
@@ -151,7 +138,6 @@
       cursor: pointer;
       animation: fadeInUp 1s ease both;
     }
-
     .service-card i {
       font-size: 2.5em;
       margin-bottom: 10px;
@@ -159,45 +145,39 @@
       color: var(--accent);
       transition: transform 0.4s ease, color 0.4s ease;
     }
-
     .service-card:hover {
       transform: translateY(-10px) scale(1.05);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
       background: linear-gradient(145deg, #008a9e, var(--primary));
     }
-
     .service-card:hover i {
       transform: rotate(15deg) scale(1.2);
       color: #fff;
     }
-
-    /* CONTACT */
     .contact {
       background-color: #004e5a;
       padding: 40px 20px;
       text-align: center;
     }
-
     .contact h2 {
       color: var(--accent);
       margin-bottom: 20px;
       font-size: 2em;
     }
-
     .contact form {
       max-width: 400px;
       margin: auto;
       display: flex;
       flex-direction: column;
     }
-
-    .contact input, .contact textarea {
+    .contact input,
+    .contact textarea {
       padding: 10px;
       margin: 10px 0;
       border: none;
       border-radius: 5px;
+      font-size: 1em;
     }
-
     .contact button {
       padding: 10px;
       background-color: var(--accent);
@@ -207,13 +187,11 @@
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s ease;
+      font-size: 1.1em;
     }
-
     .contact button:hover {
       background-color: #ffd166;
     }
-
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
@@ -221,18 +199,24 @@
       color: #ccc;
       font-size: 0.9em;
     }
-
-    /* ANIMATIONS */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
-
     @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-
     @media (max-width: 768px) {
       .gallery img {
         max-width: 90%;
@@ -242,7 +226,7 @@
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole">
+    <img src="images/logo.png" alt="Planet Tende da Sole" />
     <h1>Planet Tende da Sole</h1>
     <p>Tende di un altro pianeta</p>
   </header>
@@ -256,30 +240,47 @@
 
   <section class="gallery">
     <h2>Prima & Dopo</h2>
-    <img src="images/prima1.jpeg" alt="Prima 1">
-    <img src="images/dopo1.jpeg" alt="Dopo 1">
-    <img src="images/prima2.jpeg" alt="Prima 2">
-    <img src="images/dopo2.jpeg" alt="Dopo 2">
+    <img src="images/prima1.jpeg" alt="Prima 1" />
+    <img src="images/dopo1.jpeg" alt="Dopo 1" />
+    <img src="images/prima2.jpeg" alt="Prima 2" />
+    <img src="images/dopo2.jpeg" alt="Dopo 2" />
   </section>
 
-  <!-- SERVICES SECTION -->
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
-      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
-      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
-      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
-      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
-      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
+      <div class="service-card">
+        <i class="fas fa-sun"></i>
+        <p>Tende da sole</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-sync-alt"></i>
+        <p>Cambio tessuto</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-bug"></i>
+        <p>Zanzariere</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-warehouse"></i>
+        <p>Coperture in PVC</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tree"></i>
+        <p>Pergole</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-sliders-h"></i>
+        <p>Veneziane</p>
+      </div>
     </div>
   </section>
 
   <section class="contact">
     <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/mldlgzbl" method="POST">
-      <input type="text" name="name" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
+    <form action="https://formspree.io/f/myzpkonj" method="POST">
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
       <button type="submit">Invia</button>
     </form>
@@ -287,6 +288,7 @@
 
   <footer>
     © 2025 Planet Tende da Sole. Tutti i diritti riservati.
+    Powered by strgrweb.com
   </footer>
 </body>
 </html>

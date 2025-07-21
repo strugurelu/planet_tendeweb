@@ -1,81 +1,70 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prima & Dopo - Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
   <style>
     body {
-      margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: #004e5a;
       color: #fff;
-      text-align: center;
-    }
-
-    header {
+      margin: 0;
       padding: 20px;
-      background-color: #006D7F;
     }
 
-    header h1 {
+    h1 {
+      text-align: center;
       color: #f9b233;
+      margin-bottom: 30px;
     }
 
     .gallery {
-      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .gallery img {
-      max-width: 45%;
-      margin: 10px;
-      border-radius: 10px;
+    .gallery a img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
       border: 3px solid #f9b233;
       transition: transform 0.3s ease;
+      display: block;
     }
 
-    .gallery img:hover {
+    .gallery a:hover img {
       transform: scale(1.05);
+      border-color: #ffd166;
     }
 
-    .back-btn {
-      display: inline-block;
-      margin: 20px;
-      padding: 10px 20px;
-      background-color: #f9b233;
-      color: #004e5a;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .back-btn:hover {
-      background-color: #ffd166;
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Prima & Dopo</h1>
-  </header>
-  
-  <section class="gallery">
-    <img src="images/prima1.jpeg" alt="Prima 1">
-    <img src="images/dopo1.jpeg" alt="Dopo 1">
-    <img src="images/prima2.jpeg" alt="Prima 2">
-    <img src="images/dopo2.jpeg" alt="Dopo 2">
-    <img src="images/prima3.jpeg" alt="Prima 3">
-    <img src="images/dopo3.jpeg" alt="Dopo 3">
-    <img src="images/prima4.jpeg" alt="Prima 4">
-    <img src="images/dopo4.jpeg" alt="Dopo 4">
-    <img src="images/prima5.jpeg" alt="Prima 5">
-    <img src="images/dopo5.jpeg" alt="Dopo 5">
-    <img src="images/prima6.jpeg" alt="Prima 6">
-    <img src="images/dopo6.jpeg" alt="Dopo 6">
-  </section>
+  <h1>Prima & Dopo</h1>
 
-  <a href="index.html" class="back-btn">← Torna alla Home</a>
+  <div class="gallery">
+    <a href="images/prima1.jpeg" data-lightbox="prima-dopo" data-title="Prima 1"><img src="images/prima1.jpeg" alt="Prima 1"></a>
+    <a href="images/dopo1.jpeg" data-lightbox="prima-dopo" data-title="Dopo 1"><img src="images/dopo1.jpeg" alt="Dopo 1"></a>
+    <a href="images/prima2.jpeg" data-lightbox="prima-dopo" data-title="Prima 2"><img src="images/prima2.jpeg" alt="Prima 2"></a>
+    <a href="images/dopo2.jpeg" data-lightbox="prima-dopo" data-title="Dopo 2"><img src="images/dopo2.jpeg" alt="Dopo 2"></a>
+    <a href="images/prima3.jpeg" data-lightbox="prima-dopo" data-title="Prima 3"><img src="images/prima3.jpeg" alt="Prima 3"></a>
+    <a href="images/dopo3.jpeg" data-lightbox="prima-dopo" data-title="Dopo 3"><img src="images/dopo3.jpeg" alt="Dopo 3"></a>
+  </div>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>

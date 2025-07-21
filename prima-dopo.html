@@ -1,115 +1,81 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prima & Dopo - Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
       background-color: #004e5a;
       color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      padding: 20px;
       text-align: center;
     }
 
-    h1 {
+    header {
+      padding: 20px;
+      background-color: #006D7F;
+    }
+
+    header h1 {
       color: #f9b233;
-      margin-bottom: 30px;
     }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .gallery a {
-      display: block;
-      max-width: 300px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery a:hover {
-      transform: scale(1.05);
+      padding: 20px;
     }
 
     .gallery img {
-      width: 100%;
-      display: block;
+      max-width: 45%;
+      margin: 10px;
       border-radius: 10px;
+      border: 3px solid #f9b233;
+      transition: transform 0.3s ease;
     }
 
-    /* Lightbox */
-    #lightbox {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #fff;
+    .back-btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background-color: #f9b233;
+      color: #004e5a;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
-    #lightbox:target {
-      display: flex;
+    .back-btn:hover {
+      background-color: #ffd166;
     }
-
-    /* Close button */
-    #lightbox:target::before {
-      content: "✕";
-      position: fixed;
-      top: 20px;
-      right: 30px;
-      font-size: 3rem;
-      color: white;
-      cursor: pointer;
-      user-select: none;
-      z-index: 10000;
-    }
-
   </style>
 </head>
 <body>
+  <header>
+    <h1>Prima & Dopo</h1>
+  </header>
+  
+  <section class="gallery">
+    <img src="images/prima1.jpeg" alt="Prima 1">
+    <img src="images/dopo1.jpeg" alt="Dopo 1">
+    <img src="images/prima2.jpeg" alt="Prima 2">
+    <img src="images/dopo2.jpeg" alt="Dopo 2">
+    <img src="images/prima3.jpeg" alt="Prima 3">
+    <img src="images/dopo3.jpeg" alt="Dopo 3">
+    <img src="images/prima4.jpeg" alt="Prima 4">
+    <img src="images/dopo4.jpeg" alt="Dopo 4">
+    <img src="images/prima5.jpeg" alt="Prima 5">
+    <img src="images/dopo5.jpeg" alt="Dopo 5">
+    <img src="images/prima6.jpeg" alt="Prima 6">
+    <img src="images/dopo6.jpeg" alt="Dopo 6">
+  </section>
 
-  <h1>Prima & Dopo - Galleria Completa</h1>
-
-  <div class="gallery">
-    <!-- Cada enlace apunta a un ID de lightbox -->
-    <a href="#img1"><img src="images/prima1.jpeg" alt="Prima 1" /></a>
-    <a href="#img2"><img src="images/dopo1.jpeg" alt="Dopo 1" /></a>
-    <a href="#img3"><img src="images/prima2.jpeg" alt="Prima 2" /></a>
-    <a href="#img4"><img src="images/dopo2.jpeg" alt="Dopo 2" /></a>
-
-    <!-- Añade más imágenes aquí -->
-  </div>
-
-  <!-- Lightbox: imágenes ampliadas -->
-  <div id="lightbox">
-    <img id="img1" src="images/prima1.jpeg" alt="Prima 1 ampliata" />
-  </div>
-  <div id="lightbox">
-    <img id="img2" src="images/dopo1.jpeg" alt="Dopo 1 ampliata" />
-  </div>
-  <div id="lightbox">
-    <img id="img3" src="images/prima2.jpeg" alt="Prima 2 ampliata" />
-  </div>
-  <div id="lightbox">
-    <img id="img4" src="images/dopo2.jpeg" alt="Dopo 2 ampliata" />
-  </div>
-
+  <a href="index.html" class="back-btn">← Torna alla Home</a>
 </body>
 </html>

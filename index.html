@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
   <style>
     :root {
-      --primary: #006D7F;
+      --primary: #006d7f;
       --accent: #f9b233;
       --dark: #004e5a;
     }
@@ -17,7 +20,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
     }
 
     body {
@@ -73,8 +76,12 @@
     }
 
     @keyframes tendaAnim {
-      0% { transform: translateY(-10%); }
-      100% { transform: translateY(10%); }
+      0% {
+        transform: translateY(-10%);
+      }
+      100% {
+        transform: translateY(10%);
+      }
     }
 
     .hero-text {
@@ -199,7 +206,8 @@
       flex-direction: column;
     }
 
-    .contact input, .contact textarea {
+    .contact input,
+    .contact textarea {
       padding: 10px;
       margin: 10px 0;
       border: none;
@@ -229,29 +237,47 @@
       text-decoration: none;
     }
 
-    .facebook-btn {
+    .facebook-btn,
+    .maps-btn {
       position: fixed;
       right: 20px;
       bottom: 20px;
-      background-color: #1877f2;
-      color: white;
       border-radius: 50%;
       padding: 15px;
       font-size: 1.5em;
       text-align: center;
       z-index: 100;
       transition: transform 0.3s ease, background-color 0.3s ease;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .facebook-btn {
+      background-color: #1877f2;
+      bottom: 20px;
     }
 
     .facebook-btn:hover {
       transform: scale(1.1);
       background-color: #145db2;
     }
+
+    .maps-btn {
+      background-color: #34a853;
+      bottom: 80px; /* arriba del facebook */
+    }
+
+    .maps-btn:hover {
+      background-color: #2c8c43;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole">
+    <img src="images/logo.png" alt="Planet Tende da Sole" />
     <h1>Planet Tende da Sole</h1>
     <p>Tende di un altro pianeta</p>
   </header>
@@ -267,8 +293,8 @@
   <section class="prima-dopo-preview">
     <h2>Prima & Dopo</h2>
     <div class="prima-dopo-images">
-      <img src="images/prima1.jpeg" alt="Prima 1">
-      <img src="images/dopo1.jpeg" alt="Dopo 1">
+      <img src="images/prima1.jpeg" alt="Prima 1" />
+      <img src="images/dopo1.jpeg" alt="Dopo 1" />
     </div>
     <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
   </section>
@@ -288,18 +314,33 @@
   <section class="contact">
     <h2>Contattaci</h2>
     <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
       <button type="submit">Invia</button>
     </form>
   </section>
 
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by
+    <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
-  <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
+  <a
+    href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp?hl=es&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    class="maps-btn"
+    aria-label="Mappa Planet Tende"
+  >
+    <i class="fas fa-map-marker-alt"></i>
+  </a>
+
+  <a
+    href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr"
+    target="_blank"
+    class="facebook-btn"
+    aria-label="Facebook Planet Tende"
+  >
     <i class="fab fa-facebook-f"></i>
   </a>
 </body>

@@ -28,6 +28,8 @@
       background-color: var(--dark);
       color: #fff;
       line-height: 1.5;
+      position: relative;
+      min-height: 100vh;
     }
     header {
       text-align: center;
@@ -199,28 +201,44 @@
       color: #ccc;
       font-size: 0.9em;
     }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* Botón Facebook */
+    .facebook-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #1877f2;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .facebook-btn:hover {
+      background-color: #145dbf;
+    }
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     @media (max-width: 768px) {
-      .gallery img {
-        max-width: 90%;
-      }
+      .gallery img { max-width: 90%; }
     }
   </style>
 </head>
@@ -249,30 +267,12 @@
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-sun"></i>
-        <p>Tende da sole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sync-alt"></i>
-        <p>Cambio tessuto</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-bug"></i>
-        <p>Zanzariere</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-warehouse"></i>
-        <p>Coperture in PVC</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-tree"></i>
-        <p>Pergole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sliders-h"></i>
-        <p>Veneziane</p>
-      </div>
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
+      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
+      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
+      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
+      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
+      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
     </div>
   </section>
 
@@ -286,9 +286,13 @@
     </form>
   </section>
 
+  <a class="facebook-btn" href="https://www.facebook.com/planetendesaole" target="_blank" aria-label="Facebook Planet Tende da Sole" rel="noopener noreferrer">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati.
-    Powered by strgrweb.com
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati.<br>
+    Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 </body>
 </html>

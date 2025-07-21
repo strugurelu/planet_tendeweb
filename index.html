@@ -26,7 +26,6 @@
       line-height: 1.5;
     }
 
-    /* HEADER */
     header {
       text-align: center;
       padding: 20px;
@@ -35,7 +34,6 @@
 
     header img {
       max-width: 180px;
-      animation: fadeIn 1.5s ease-in-out;
     }
 
     header h1 {
@@ -49,7 +47,6 @@
       color: #eaeaea;
     }
 
-    /* HERO SECTION */
     .hero {
       position: relative;
       height: 300px;
@@ -89,35 +86,24 @@
     .hero-text h2 {
       font-size: 2em;
       color: #fff;
-      animation: fadeInUp 1.5s ease-in-out;
     }
 
-    /* GALLERY */
-    .gallery {
-      padding: 40px 20px;
-      text-align: center;
-      background: #004e5a;
+    .btn-gallery {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
-    .gallery h2 {
-      color: var(--accent);
-      margin-bottom: 20px;
-      font-size: 2em;
+    .btn-gallery:hover {
+      background-color: #ffd166;
     }
 
-    .gallery img {
-      max-width: 45%;
-      margin: 10px;
-      border-radius: 10px;
-      border: 3px solid var(--accent);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* SERVICES (FRAMES) */
     .services {
       padding: 40px 20px;
       background-color: var(--primary);
@@ -147,9 +133,7 @@
       font-size: 1.1em;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      animation: fadeInUp 1s ease both;
+      transition: transform 0.3s ease;
     }
 
     .service-card i {
@@ -157,21 +141,12 @@
       margin-bottom: 10px;
       display: block;
       color: var(--accent);
-      transition: transform 0.4s ease, color 0.4s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
-      background: linear-gradient(145deg, #008a9e, var(--primary));
+      transform: translateY(-10px);
     }
 
-    .service-card:hover i {
-      transform: rotate(15deg) scale(1.2);
-      color: #fff;
-    }
-
-    /* CONTACT */
     .contact {
       background-color: #004e5a;
       padding: 40px 20px;
@@ -206,35 +181,8 @@
       color: var(--primary);
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
-    .contact button:hover {
-      background-color: #ffd166;
-    }
-
-    /* FACEBOOK BUTTON */
-    .facebook-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #1877f2;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 1.5em;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      text-align: center;
-      z-index: 100;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .facebook-btn:hover {
-      transform: scale(1.1);
-      background-color: #145db2;
-    }
-
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
@@ -248,21 +196,23 @@
       text-decoration: none;
     }
 
-    /* ANIMATIONS */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .facebook-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #1877f2;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.5em;
+      text-align: center;
+      z-index: 100;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .gallery img {
-        max-width: 90%;
-      }
+    .facebook-btn:hover {
+      transform: scale(1.1);
+      background-color: #145db2;
     }
   </style>
 </head>
@@ -277,27 +227,10 @@
     <div class="tenda"></div>
     <div class="hero-text">
       <h2>Protezione e Design per la Tua Casa</h2>
+      <a href="prima-dopo.html" class="btn-gallery">Guarda Prima & Dopo</a>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="gallery">
-    <h2>Prima & Dopo</h2>
-    <img src="images/prima1.jpeg" alt="Prima 1">
-    <img src="images/dopo1.jpeg" alt="Dopo 1">
-    <img src="images/prima2.jpeg" alt="Prima 2">
-    <img src="images/dopo2.jpeg" alt="Dopo 2">
-    <img src="images/prima3.jpeg" alt="Prima 3">
-    <img src="images/dopo3.jpeg" alt="Dopo 3">
-    <img src="images/prima4.jpeg" alt="Prima 4">
-    <img src="images/dopo4.jpeg" alt="Dopo 4">
-    <img src="images/prima5.jpeg" alt="Prima 5">
-    <img src="images/dopo5.jpeg" alt="Dopo 5">
-    <img src="images/prima6.jpeg" alt="Prima 6">
-    <img src="images/dopo6.jpeg" alt="Dopo 6">
-  </section>
-
-  <!-- SERVICES -->
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
@@ -310,7 +243,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact">
     <h2>Contattaci</h2>
     <form action="https://formspree.io/f/myzpkonj" method="POST">
@@ -325,7 +257,6 @@
     © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
-  <!-- Facebook Button -->
   <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
     <i class="fab fa-facebook-f"></i>
   </a>

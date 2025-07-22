@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tende a Braccia - Planet Tende da Sole</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #006D7F;
+      --accent: #f9b233;
+      --dark: #004e5a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--dark);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: var(--accent);
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .gallery img {
+      width: 250px;
+      border-radius: 10px;
+      border: 3px solid var(--accent);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Botón Volver */
+    .btn-back {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: var(--accent);
+      color: var(--primary);
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #ffd166;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tende a Braccia</h1>
+    <p>Galleria fotografica di tende a braccia</p>
+  </header>
+
+  <section class="gallery">
+    <img src="images/tendabraccia1.jpeg" alt="Tenda a Braccia 1" />
+    <img src="images/tendabraccia2.jpeg" alt="Tenda a Braccia 2" />
+    <img src="images/tendabraccia3.jpeg" alt="Tenda a Braccia 3" />
+    <img src="images/tendabraccia4.jpeg" alt="Tenda a Braccia 4" />
+    <img src="images/tendabraccia5.jpeg" alt="Tenda a Braccia 5" />
+    <img src="images/tendabraccia6.jpeg" alt="Tenda a Braccia 6" />
+    <img src="images/tendabraccia7.jpeg" alt="Tenda a Braccia 7" />
+    <img src="images/tendabraccia8.jpeg" alt="Tenda a Braccia 8" />
+    <img src="images/tendabraccia9.jpeg" alt="Tenda a Braccia 9" />
+    <img src="images/tendabraccia10.jpeg" alt="Tenda a Braccia 10" />
+    <img src="images/tendabraccia11.jpeg" alt="Tenda a Braccia 11" />
+  </section>
+
+  <a href="index.html" class="btn-back">← Torna alla pagina principale</a>
+
+</body>
+</html>

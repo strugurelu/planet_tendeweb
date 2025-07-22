@@ -4,11 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
   <style>
     :root {
-      --primary: #006D7F;
+      --primary: #006d7f;
       --accent: #f9b233;
       --dark: #004e5a;
     }
@@ -183,36 +189,6 @@
       transform: translateY(-10px);
     }
 
-    /* --- TESTIMONIOS --- */
-    .testimonials {
-      background-color: #003f4d;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-      border-radius: 15px;
-      text-align: center;
-      color: #f9b233;
-    }
-
-    .testimonials h2 {
-      margin-bottom: 25px;
-      font-size: 2em;
-      color: var(--accent);
-    }
-
-    .testimonial {
-      margin-bottom: 20px;
-      font-style: italic;
-      font-size: 1.1em;
-    }
-
-    .testimonial-author {
-      margin-top: 10px;
-      font-weight: bold;
-      font-style: normal;
-      color: #fff;
-    }
-
     /* --- CONTACT --- */
     .contact {
       background-color: #004e5a;
@@ -251,6 +227,34 @@
       cursor: pointer;
     }
 
+    /* --- TESTIMONIALS --- */
+    .testimonials {
+      max-width: 600px;
+      margin: 30px auto 60px auto;
+      padding: 20px;
+      background-color: #003f4d;
+      border-radius: 10px;
+      color: #f9b233;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      margin-bottom: 20px;
+    }
+
+    .testimonial {
+      font-style: italic;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      margin-top: 10px;
+      font-weight: bold;
+      font-style: normal;
+      color: #fff;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -264,22 +268,32 @@
       text-decoration: none;
     }
 
-    .facebook-btn, .maps-btn {
+    .facebook-btn,
+    .maps-btn {
       position: fixed;
-      bottom: 20px;
+      right: 20px;
+      bottom: 70px;
+      background-color: #1877f2;
       color: white;
       border-radius: 50%;
       padding: 15px;
       font-size: 1.5em;
       text-align: center;
       z-index: 100;
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .facebook-btn {
+      bottom: 20px;
+    }
+
+    .maps-btn {
+      background-color: #1a73e8;
+      bottom: 80px;
       right: 20px;
-      background-color: #1877f2;
     }
 
     .facebook-btn:hover {
@@ -287,86 +301,9 @@
       background-color: #145db2;
     }
 
-    .maps-btn {
-      right: 70px; /* para que no se superponga con facebook */
-      background-color: #de5246;
-    }
-
     .maps-btn:hover {
       transform: scale(1.1);
-      background-color: #b83932;
-    }
-
-    /* NUEVO BOTÓN POLÍTICAS */
-    .privacy-btn {
-      position: fixed;
-      left: 20px;
-      bottom: 20px;
-      background-color: var(--accent);
-      color: var(--primary);
-      border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 100;
-      transition: background 0.3s ease;
-    }
-    .privacy-btn:hover {
-      background-color: #ffd166;
-    }
-
-    /* MODAL POLÍTICAS */
-    #privacyModal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      z-index: 200;
-    }
-
-    #privacyModal .modal-content {
-      background: #004e5a;
-      border-radius: 12px;
-      max-width: 600px;
-      max-height: 80vh;
-      overflow-y: auto;
-      color: #fff;
-      padding: 20px 30px;
-      box-shadow: 0 0 15px #000;
-    }
-
-    #privacyModal h2 {
-      margin-bottom: 15px;
-      color: var(--accent);
-    }
-
-    #privacyModal p {
-      margin-bottom: 12px;
-      font-size: 0.95em;
-    }
-
-    #privacyModal button {
-      margin-top: 20px;
-      background-color: var(--accent);
-      color: var(--primary);
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      font-size: 1em;
-      transition: background 0.3s ease;
-    }
-    #privacyModal button:hover {
-      background-color: #ffd166;
+      background-color: #0c52b2;
     }
   </style>
 </head>
@@ -397,34 +334,26 @@
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-sun"></i>
-        <p>Tende da sole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sync-alt"></i>
-        <p>Cambio tessuto</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-bug"></i>
-        <p>Zanzariere</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-warehouse"></i>
-        <p>Coperture in PVC</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-tree"></i>
-        <p>Pergole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sliders-h"></i>
-        <p>Veneziane</p>
-      </div>
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
+      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
+      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
+      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
+      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
+      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
     </div>
   </section>
 
-  <!-- SECCIÓN TESTIMONIOS -->
+  <section class="contact">
+    <h2>Contattaci</h2>
+    <form action="https://formspree.io/f/myzpkonj" method="POST">
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <!-- SECCIÓN TESTIMONIOS DEBAJO DEL CONTACTO -->
   <section class="testimonials">
     <h2>Testimonianze</h2>
     <div class="testimonial">
@@ -441,79 +370,33 @@
     </div>
   </section>
 
-  <section class="contact">
-    <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
-  </section>
-
   <footer>
     © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by
-    <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+    <a href="https://strgrweb.com" target="_blank" rel="noopener noreferrer"
+      >strgrweb.com</a
+    >
   </footer>
 
-  <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn" title="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-
-  <a href="https://goo.gl/maps/tuDirecciónAqui" target="_blank" class="maps-btn" title="Google Maps">
+  <!-- Botón Google Maps -->
+  <a
+    href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp?hl=es&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    class="maps-btn"
+    aria-label="Vai a Google Maps"
+    title="Vai a Google Maps"
+  >
     <i class="fas fa-map-marker-alt"></i>
   </a>
 
-  <!-- Botón fijo para abrir políticas -->
-  <button class="privacy-btn" onclick="openModal()">Condizioni & Privacy</button>
-
-  <!-- Modal de Políticas -->
-  <div id="privacyModal">
-    <div class="modal-content">
-      <h2>Politiche di Riservatezza e Condizioni</h2>
-      <p>
-        Benvenuti su Planet Tende da Sole. La vostra privacy è importante per noi. Questa pagina
-        descrive le informazioni che raccogliamo, come le utilizziamo e i vostri diritti.
-      </p>
-      <p>
-        <strong>Informazioni raccolte:</strong> Raccogliamo dati personali come nome, email e messaggi
-        inviati tramite il nostro modulo di contatto.
-      </p>
-      <p>
-        <strong>Utilizzo dei dati:</strong> Utilizziamo le informazioni raccolte per rispondere alle
-        vostre richieste e migliorare i nostri servizi.
-      </p>
-      <p>
-        <strong>Conservazione dei dati:</strong> I dati vengono conservati in modo sicuro e non
-        condivisi con terze parti senza il vostro consenso.
-      </p>
-      <p>
-        <strong>Diritti degli utenti:</strong> Potete richiedere l’accesso, la modifica o la cancellazione
-        dei vostri dati in qualsiasi momento contattandoci.
-      </p>
-      <p>
-        Continuando a navigare sul sito, accettate queste condizioni di utilizzo e politiche sulla privacy.
-      </p>
-      <button onclick="acceptPolicies()">Accetto</button>
-    </div>
-  </div>
-
-  <script>
-    function openModal() {
-      document.getElementById('privacyModal').style.display = 'flex';
-    }
-
-    function acceptPolicies() {
-      document.getElementById('privacyModal').style.display = 'none';
-      localStorage.setItem('policiesAccepted', 'true');
-    }
-
-    // Mostrar modal solo si no se ha aceptado antes
-    window.onload = function () {
-      if (!localStorage.getItem('policiesAccepted')) {
-        openModal();
-      }
-    };
-  </script>
+  <!-- Botón Facebook -->
+  <a
+    href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr"
+    target="_blank"
+    class="facebook-btn"
+    aria-label="Vai alla pagina Facebook"
+    title="Vai alla pagina Facebook"
+  >
+    <i class="fab fa-facebook-f"></i>
+  </a>
 </body>
 </html>

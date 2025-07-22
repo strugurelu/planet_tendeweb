@@ -136,9 +136,36 @@
       text-decoration: none;
       border-radius: 8px;
       transition: background 0.3s;
+      cursor: pointer;
     }
 
     .btn-gallery:hover {
+      background-color: #ffd166;
+    }
+
+    /* Botones extra para Tende a Braccia y Tende a Caduta */
+    .btn-extra-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-extra {
+      background-color: #f9b233;
+      color: #004e5a;
+      padding: 10px 18px;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      border: none;
+      font-size: 1em;
+    }
+
+    .btn-extra:hover {
       background-color: #ffd166;
     }
 
@@ -224,19 +251,35 @@
       cursor: pointer;
     }
 
-    footer {
+    /* --- TESTIMONIALS --- */
+    .testimonials {
+      background-color: #006d7f;
+      color: white;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      border-radius: 12px;
       text-align: center;
-      padding: 20px;
-      background-color: var(--primary);
-      color: #ccc;
-      font-size: 0.9em;
+      font-style: italic;
+      font-size: 1.2em;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    footer a {
-      color: #ccc;
-      text-decoration: none;
+    .testimonial-quote {
+      margin-bottom: 15px;
+      font-size: 1.3em;
     }
 
+    .testimonial-author {
+      font-weight: 700;
+      font-style: normal;
+      color: #ffd166;
+    }
+
+    /* --- Pulsantes fijos --- */
     .facebook-btn,
     .maps-btn {
       position: fixed;
@@ -347,6 +390,12 @@
       <img src="images/dopo1.jpeg" alt="Dopo 1" />
     </div>
     <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
+
+    <!-- Botones para Tende a Caduta y Tende a Braccia -->
+    <div class="btn-extra-container">
+      <a href="tende-caduta.html" class="btn-extra">Tende a Caduta</a>
+      <a href="tende-a-braccia.html" class="btn-extra">Tende a Braccia</a>
+    </div>
   </section>
 
   <section class="services">
@@ -394,15 +443,18 @@
     </form>
   </section>
 
+  <!-- Sección de Testimonios -->
+  <section class="testimonials" aria-live="polite" aria-atomic="true">
+    <div class="testimonial-quote" id="testimonial-quote">
+      “Planet Tende ha trasformato il mio balcone in un'oasi di relax!”
+    </div>
+    <div class="testimonial-author" id="testimonial-author">- Marco R.</div>
+  </section>
+
   <!-- Modal Politiche e Condizioni -->
   <div id="policyModal">
     <div id="policyModalContent">
-      <h2>Termini e Condizioni & Politiche sulla Privacy</h2>
-      <p>
-        Benvenuto su Planet Tende da Sole. Utilizzando questo sito web, accetti i
-        nostri termini e condizioni e la nostra politica sulla privacy. Ti
-        preghiamo di leggerli attentamente prima di continuare.
-      </p>
+      <h2>Termini e Condizioni</h2>
       <p>
         Raccolta dati: Raccogliamo dati personali come nome, email e messaggi
         inviati tramite il modulo di contatto per rispondere alle tue richieste.
@@ -457,7 +509,37 @@
       } else {
         policyModal.style.display = "flex";
       }
+
+      startTestimonialRotation();
     };
+
+    // Testimonios rotativos
+    const testimonials = [
+      {
+        quote: "“Planet Tende ha trasformato il mio balcone in un'oasi di relax!”",
+        author: "- Marco R.",
+      },
+      {
+        quote: "“Servizio rapido e professionale, altamente consigliato.”",
+        author: "- Lucia M.",
+      },
+      {
+        quote: "“La qualità delle tende è eccellente e il prezzo giusto.”",
+        author: "- Giovanni P.",
+      },
+    ];
+
+    let testimonialIndex = 0;
+    const testimonialQuoteEl = document.getElementById("testimonial-quote");
+    const testimonialAuthorEl = document.getElementById("testimonial-author");
+
+    function startTestimonialRotation() {
+      setInterval(() => {
+        testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+        testimonialQuoteEl.textContent = testimonials[testimonialIndex].quote;
+        testimonialAuthorEl.textContent = testimonials[testimonialIndex].author;
+      }, 2000);
+    }
   </script>
 </body>
 </html>

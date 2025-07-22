@@ -12,260 +12,69 @@
       --accent: #f9b233;
       --dark: #004e5a;
     }
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+    body {background-color:var(--dark);color:#fff;line-height:1.5;}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
+    header {text-align:center;padding:20px;background-color:var(--primary);}
+    header img {max-width:180px;}
+    header h1 {color:var(--accent);margin-top:10px;font-size:2em;}
+    header p {font-size:1.1em;color:#eaeaea;}
 
-    body {
-      background-color: var(--dark);
-      color: #fff;
-      line-height: 1.5;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--primary);
-    }
-
-    header img {
-      max-width: 180px;
-    }
-
-    header h1 {
-      color: var(--accent);
-      margin-top: 10px;
-      font-size: 2em;
-    }
-
-    header p {
-      font-size: 1.1em;
-      color: #eaeaea;
-    }
-
-    .hero {
-      position: relative;
-      height: 300px;
-      background: linear-gradient(to bottom, var(--accent), var(--primary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .tenda {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        45deg,
-        var(--accent),
-        var(--accent) 20px,
-        var(--primary) 20px,
-        var(--primary) 40px
-      );
-      animation: tendaAnim 3s infinite alternate;
-      z-index: 1;
-    }
-
-    @keyframes tendaAnim {
-      0% { transform: translateY(-10%); }
-      100% { transform: translateY(10%); }
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-
-    .hero-text h2 {
-      font-size: 2em;
-      color: #fff;
-    }
+    .hero {position:relative;height:300px;background:linear-gradient(to bottom,var(--accent),var(--primary));display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .tenda {position:absolute;width:100%;height:100%;background:repeating-linear-gradient(45deg,var(--accent),var(--accent) 20px,var(--primary) 20px,var(--primary) 40px);animation:tendaAnim 3s infinite alternate;z-index:1;}
+    @keyframes tendaAnim {0%{transform:translateY(-10%);}100%{transform:translateY(10%);}}
+    .hero-text {position:relative;z-index:2;text-align:center;}
+    .hero-text h2 {font-size:2em;color:#fff;}
 
     /* --- PRIMA & DOPO --- */
-    .prima-dopo-preview {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #005c6b;
-    }
-
-    .prima-dopo-preview h2 {
-      color: var(--accent);
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-
-    .prima-dopo-images {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .prima-dopo-images img {
-      width: 300px;
-      border-radius: 10px;
-      border: 3px solid var(--accent);
-      transition: transform 0.3s ease;
-    }
-
-    .prima-dopo-images img:hover {
-      transform: scale(1.05);
-    }
-
-    .btn-gallery {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .btn-gallery:hover {
-      background-color: #ffd166;
-    }
+    .prima-dopo-preview {text-align:center;padding:40px 20px;background-color:#005c6b;}
+    .prima-dopo-preview h2 {color:var(--accent);margin-bottom:20px;font-size:2em;}
+    .prima-dopo-images {display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+    .prima-dopo-images img {width:300px;border-radius:10px;border:3px solid var(--accent);transition:transform 0.3s ease;}
+    .prima-dopo-images img:hover {transform:scale(1.05);}
+    .btn-gallery {display:inline-block;margin-top:20px;padding:10px 20px;background-color:var(--accent);color:var(--primary);font-weight:bold;text-decoration:none;border-radius:8px;transition:background 0.3s;}
+    .btn-gallery:hover {background-color:#ffd166;}
 
     /* --- SERVIZI --- */
-    .services {
-      padding: 40px 20px;
-      background-color: var(--primary);
-      text-align: center;
-    }
-
-    .services h2 {
-      color: var(--accent);
-      margin-bottom: 30px;
-      font-size: 2em;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .service-card {
-      background: linear-gradient(145deg, var(--primary), #008a9e);
-      color: #fff;
-      padding: 30px 20px;
-      border-radius: 15px;
-      text-align: center;
-      font-size: 1.1em;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .service-card i {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      display: block;
-      color: var(--accent);
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-    }
+    .services {padding:40px 20px;background-color:var(--primary);text-align:center;}
+    .services h2 {color:var(--accent);margin-bottom:30px;font-size:2em;}
+    .services-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1000px;margin:auto;}
+    .service-card {background:linear-gradient(145deg,var(--primary),#008a9e);color:#fff;padding:30px 20px;border-radius:15px;text-align:center;font-size:1.1em;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.4);transition:transform 0.3s ease;}
+    .service-card i {font-size:2.5em;margin-bottom:10px;display:block;color:var(--accent);}
+    .service-card:hover {transform:translateY(-10px);}
 
     /* --- CONTACT --- */
-    .contact {
-      background-color: #004e5a;
-      padding: 40px 20px;
-      text-align: center;
-    }
+    .contact {background-color:#004e5a;padding:40px 20px;text-align:center;}
+    .contact h2 {color:var(--accent);margin-bottom:20px;font-size:2em;}
+    .contact form {max-width:400px;margin:auto;display:flex;flex-direction:column;}
+    .contact input,.contact textarea {padding:10px;margin:10px 0;border:none;border-radius:5px;}
+    .contact button {padding:10px;background-color:var(--accent);border:none;border-radius:5px;color:var(--primary);font-weight:bold;cursor:pointer;}
 
-    .contact h2 {
-      color: var(--accent);
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
+    footer {text-align:center;padding:20px;background-color:var(--primary);color:#ccc;font-size:0.9em;}
+    footer a {color:#ccc;text-decoration:none;}
 
-    .contact form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
+    .facebook-btn {position:fixed;right:20px;bottom:20px;background-color:#1877f2;color:white;border-radius:50%;padding:15px;font-size:1.5em;text-align:center;z-index:100;transition:transform 0.3s ease,background-color 0.3s ease;}
+    .facebook-btn:hover {transform:scale(1.1);background-color:#145db2;}
+    .maps-btn {position:fixed;right:20px;bottom:80px;background-color:#34a853;color:white;border-radius:50%;padding:15px;font-size:1.5em;text-align:center;z-index:100;transition:transform 0.3s ease,background-color 0.3s ease;}
+    .maps-btn:hover {transform:scale(1.1);background-color:#2c8a46;}
 
-    .contact input, .contact textarea {
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
+    /* --- MODAL --- */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center;
+      z-index: 9999; padding: 20px;
     }
-
-    .contact button {
-      padding: 10px;
-      background-color: var(--accent);
-      border: none;
-      border-radius: 5px;
-      color: var(--primary);
-      font-weight: bold;
-      cursor: pointer;
+    .modal-content {
+      background: #fff; color: #333; padding: 20px; border-radius: 8px;
+      max-width: 500px; text-align: center;
     }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--primary);
-      color: #ccc;
-      font-size: 0.9em;
+    .modal-content h2 {color: var(--primary); margin-bottom: 10px;}
+    .modal-content p {font-size: 0.9em; margin-bottom: 15px;}
+    .modal-content button {
+      background: var(--primary); color: #fff; border: none; padding: 10px 20px;
+      border-radius: 5px; font-weight: bold; cursor: pointer;
     }
-
-    footer a {
-      color: #ccc;
-      text-decoration: none;
-    }
-
-    .facebook-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #1877f2;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 1.5em;
-      text-align: center;
-      z-index: 100;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .facebook-btn:hover {
-      transform: scale(1.1);
-      background-color: #145db2;
-    }
-
-    .map-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 80px;
-      background-color: #34a853;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 1.5em;
-      text-align: center;
-      z-index: 100;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .map-btn:hover {
-      transform: scale(1.1);
-      background-color: #2c8c45;
-    }
+    .modal-content button:hover {background: var(--dark);}
   </style>
 </head>
 <body>
@@ -306,27 +115,56 @@
 
   <section class="contact">
     <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/myzpkonj" method="POST">
+    <form action="https://formspree.io/f/myzpkonj" method="POST" onsubmit="return validateForm()">
       <input type="text" name="name" placeholder="Nome" required>
       <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
+      <label style="font-size:0.9em; text-align:left; margin: 5px 0;">
+        <input type="checkbox" id="acceptPrivacy" required> Ho letto e accetto la <a href="#">Privacy Policy</a>
+      </label>
       <button type="submit">Invia</button>
     </form>
   </section>
 
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | 
-    <a href="privacy.html">Privacy Policy</a> | 
-    Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
-  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp?hl=es&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" 
-     target="_blank" class="map-btn">
+  <!-- BOTONES -->
+  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp" target="_blank" class="maps-btn">
     <i class="fas fa-map-marker-alt"></i>
   </a>
-
   <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
     <i class="fab fa-facebook-f"></i>
   </a>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-content">
+      <h2>Condizioni & Privacy</h2>
+      <p>Utilizziamo i dati esclusivamente per rispondere alle tue richieste. Cliccando su "Accetto" confermi di aver letto e accettato la nostra Privacy Policy.</p>
+      <button onclick="closeModal()">Accetto</button>
+    </div>
+  </div>
+
+  <script>
+    function closeModal() {
+      document.getElementById('privacyModal').style.display = 'none';
+      localStorage.setItem('privacyAccepted', 'true');
+    }
+    function validateForm() {
+      const check = document.getElementById('acceptPrivacy');
+      if (!check.checked) {
+        alert("Devi accettare la Privacy Policy per continuare.");
+        return false;
+      }
+      return true;
+    }
+    window.onload = function() {
+      if (localStorage.getItem('privacyAccepted') === 'true') {
+        document.getElementById('privacyModal').style.display = 'none';
+      }
+    };
+  </script>
 </body>
 </html>

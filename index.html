@@ -1,85 +1,334 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <style>
     :root {
       --primary: #006D7F;
       --accent: #f9b233;
       --dark: #004e5a;
     }
-    * {margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
-    body {background-color:var(--dark);color:#fff;line-height:1.5;}
 
-    header {text-align:center;padding:20px;background-color:var(--primary);}
-    header img {max-width:180px;}
-    header h1 {color:var(--accent);margin-top:10px;font-size:2em;}
-    header p {font-size:1.1em;color:#eaeaea;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-    .hero {position:relative;height:300px;background:linear-gradient(to bottom,var(--accent),var(--primary));display:flex;align-items:center;justify-content:center;overflow:hidden;}
-    .tenda {position:absolute;width:100%;height:100%;background:repeating-linear-gradient(45deg,var(--accent),var(--accent) 20px,var(--primary) 20px,var(--primary) 40px);animation:tendaAnim 3s infinite alternate;z-index:1;}
-    @keyframes tendaAnim {0%{transform:translateY(-10%);}100%{transform:translateY(10%);}}
-    .hero-text {position:relative;z-index:2;text-align:center;}
-    .hero-text h2 {font-size:2em;color:#fff;}
+    body {
+      background-color: var(--dark);
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--primary);
+    }
+
+    header img {
+      max-width: 180px;
+    }
+
+    header h1 {
+      color: var(--accent);
+      margin-top: 10px;
+      font-size: 2em;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #eaeaea;
+    }
+
+    .hero {
+      position: relative;
+      height: 300px;
+      background: linear-gradient(to bottom, var(--accent), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .tenda {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--accent),
+        var(--accent) 20px,
+        var(--primary) 20px,
+        var(--primary) 40px
+      );
+      animation: tendaAnim 3s infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes tendaAnim {
+      0% {
+        transform: translateY(-10%);
+      }
+      100% {
+        transform: translateY(10%);
+      }
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-text h2 {
+      font-size: 2em;
+      color: #fff;
+    }
 
     /* --- PRIMA & DOPO --- */
-    .prima-dopo-preview {text-align:center;padding:40px 20px;background-color:#005c6b;}
-    .prima-dopo-preview h2 {color:var(--accent);margin-bottom:20px;font-size:2em;}
-    .prima-dopo-images {display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
-    .prima-dopo-images img {width:300px;border-radius:10px;border:3px solid var(--accent);transition:transform 0.3s ease;}
-    .prima-dopo-images img:hover {transform:scale(1.05);}
-    .btn-gallery {display:inline-block;margin-top:20px;padding:10px 20px;background-color:var(--accent);color:var(--primary);font-weight:bold;text-decoration:none;border-radius:8px;transition:background 0.3s;}
-    .btn-gallery:hover {background-color:#ffd166;}
+    .prima-dopo-preview {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #005c6b;
+    }
+
+    .prima-dopo-preview h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .prima-dopo-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .prima-dopo-images img {
+      width: 300px;
+      border-radius: 10px;
+      border: 3px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .prima-dopo-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-gallery {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn-gallery:hover {
+      background-color: #ffd166;
+    }
 
     /* --- SERVIZI --- */
-    .services {padding:40px 20px;background-color:var(--primary);text-align:center;}
-    .services h2 {color:var(--accent);margin-bottom:30px;font-size:2em;}
-    .services-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1000px;margin:auto;}
-    .service-card {background:linear-gradient(145deg,var(--primary),#008a9e);color:#fff;padding:30px 20px;border-radius:15px;text-align:center;font-size:1.1em;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.4);transition:transform 0.3s ease;}
-    .service-card i {font-size:2.5em;margin-bottom:10px;display:block;color:var(--accent);}
-    .service-card:hover {transform:translateY(-10px);}
+    .services {
+      padding: 40px 20px;
+      background-color: var(--primary);
+      text-align: center;
+    }
+
+    .services h2 {
+      color: var(--accent);
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, var(--primary), #008a9e);
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card i {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      display: block;
+      color: var(--accent);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
 
     /* --- CONTACT --- */
-    .contact {background-color:#004e5a;padding:40px 20px;text-align:center;}
-    .contact h2 {color:var(--accent);margin-bottom:20px;font-size:2em;}
-    .contact form {max-width:400px;margin:auto;display:flex;flex-direction:column;}
-    .contact input,.contact textarea {padding:10px;margin:10px 0;border:none;border-radius:5px;}
-    .contact button {padding:10px;background-color:var(--accent);border:none;border-radius:5px;color:var(--primary);font-weight:bold;cursor:pointer;}
-
-    footer {text-align:center;padding:20px;background-color:var(--primary);color:#ccc;font-size:0.9em;}
-    footer a {color:#ccc;text-decoration:none;}
-
-    .facebook-btn {position:fixed;right:20px;bottom:20px;background-color:#1877f2;color:white;border-radius:50%;padding:15px;font-size:1.5em;text-align:center;z-index:100;transition:transform 0.3s ease,background-color 0.3s ease;}
-    .facebook-btn:hover {transform:scale(1.1);background-color:#145db2;}
-    .maps-btn {position:fixed;right:20px;bottom:80px;background-color:#34a853;color:white;border-radius:50%;padding:15px;font-size:1.5em;text-align:center;z-index:100;transition:transform 0.3s ease,background-color 0.3s ease;}
-    .maps-btn:hover {transform:scale(1.1);background-color:#2c8a46;}
-
-    /* --- MODAL --- */
-    .modal-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center;
-      z-index: 9999; padding: 20px;
+    .contact {
+      background-color: #004e5a;
+      padding: 40px 20px;
+      text-align: center;
     }
-    .modal-content {
-      background: #fff; color: #333; padding: 20px; border-radius: 8px;
-      max-width: 500px; text-align: center;
+
+    .contact h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2em;
     }
-    .modal-content h2 {color: var(--primary); margin-bottom: 10px;}
-    .modal-content p {font-size: 0.9em; margin-bottom: 15px;}
-    .modal-content button {
-      background: var(--primary); color: #fff; border: none; padding: 10px 20px;
-      border-radius: 5px; font-weight: bold; cursor: pointer;
+
+    .contact form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
     }
-    .modal-content button:hover {background: var(--dark);}
+
+    .contact input,
+    .contact textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      padding: 10px;
+      background-color: var(--accent);
+      border: none;
+      border-radius: 5px;
+      color: var(--primary);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--primary);
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .facebook-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #1877f2;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.5em;
+      text-align: center;
+      z-index: 100;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .facebook-btn:hover {
+      transform: scale(1.1);
+      background-color: #145db2;
+    }
+
+    /* NUEVO BOTÓN POLÍTICAS */
+    .privacy-btn {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 100;
+      transition: background 0.3s ease;
+    }
+    .privacy-btn:hover {
+      background-color: #ffd166;
+    }
+
+    /* MODAL POLÍTICAS */
+    #privacyModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 200;
+    }
+
+    #privacyModal .modal-content {
+      background: #004e5a;
+      border-radius: 12px;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      color: #fff;
+      padding: 20px 30px;
+      box-shadow: 0 0 15px #000;
+    }
+
+    #privacyModal h2 {
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    #privacyModal p {
+      margin-bottom: 12px;
+      font-size: 0.95em;
+    }
+
+    #privacyModal button {
+      margin-top: 20px;
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+    #privacyModal button:hover {
+      background-color: #ffd166;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole">
+    <img src="images/logo.png" alt="Planet Tende da Sole" />
     <h1>Planet Tende da Sole</h1>
     <p>Tende di un altro pianeta</p>
   </header>
@@ -95,8 +344,8 @@
   <section class="prima-dopo-preview">
     <h2>Prima & Dopo</h2>
     <div class="prima-dopo-images">
-      <img src="images/prima1.jpeg" alt="Prima 1">
-      <img src="images/dopo1.jpeg" alt="Dopo 1">
+      <img src="images/prima1.jpeg" alt="Prima 1" />
+      <img src="images/dopo1.jpeg" alt="Dopo 1" />
     </div>
     <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
   </section>
@@ -104,65 +353,100 @@
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
-      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
-      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
-      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
-      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
-      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
+      <div class="service-card">
+        <i class="fas fa-sun"></i>
+        <p>Tende da sole</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-sync-alt"></i>
+        <p>Cambio tessuto</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-bug"></i>
+        <p>Zanzariere</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-warehouse"></i>
+        <p>Coperture in PVC</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tree"></i>
+        <p>Pergole</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-sliders-h"></i>
+        <p>Veneziane</p>
+      </div>
     </div>
   </section>
 
   <section class="contact">
     <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/myzpkonj" method="POST" onsubmit="return validateForm()">
-      <input type="text" name="name" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
+    <form action="https://formspree.io/f/myzpkonj" method="POST">
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
-      <label style="font-size:0.9em; text-align:left; margin: 5px 0;">
-        <input type="checkbox" id="acceptPrivacy" required> Ho letto e accetto la <a href="#">Privacy Policy</a>
-      </label>
       <button type="submit">Invia</button>
     </form>
   </section>
 
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by
+    <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
-  <!-- BOTONES -->
-  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp" target="_blank" class="maps-btn">
-    <i class="fas fa-map-marker-alt"></i>
-  </a>
   <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
     <i class="fab fa-facebook-f"></i>
   </a>
 
-  <!-- MODAL -->
-  <div class="modal-overlay" id="privacyModal">
+  <!-- Botón fijo para abrir políticas -->
+  <button class="privacy-btn" onclick="openModal()">Condizioni & Privacy</button>
+
+  <!-- Modal de Políticas -->
+  <div id="privacyModal">
     <div class="modal-content">
-      <h2>Condizioni & Privacy</h2>
-      <p>Utilizziamo i dati esclusivamente per rispondere alle tue richieste. Cliccando su "Accetto" confermi di aver letto e accettato la nostra Privacy Policy.</p>
-      <button onclick="closeModal()">Accetto</button>
+      <h2>Politiche di Riservatezza e Condizioni</h2>
+      <p>
+        Benvenuti su Planet Tende da Sole. La vostra privacy è importante per noi. Questa pagina
+        descrive le informazioni che raccogliamo, come le utilizziamo e i vostri diritti.
+      </p>
+      <p>
+        <strong>Informazioni raccolte:</strong> Raccogliamo dati personali come nome, email e messaggi
+        inviati tramite il nostro modulo di contatto.
+      </p>
+      <p>
+        <strong>Utilizzo dei dati:</strong> Utilizziamo le informazioni raccolte per rispondere alle
+        vostre richieste e migliorare i nostri servizi.
+      </p>
+      <p>
+        <strong>Conservazione dei dati:</strong> I dati vengono conservati in modo sicuro e non
+        condivisi con terze parti senza il vostro consenso.
+      </p>
+      <p>
+        <strong>Diritti degli utenti:</strong> Potete richiedere l’accesso, la modifica o la cancellazione
+        dei vostri dati in qualsiasi momento contattandoci.
+      </p>
+      <p>
+        Continuando a navigare sul sito, accettate queste condizioni di utilizzo e politiche sulla privacy.
+      </p>
+      <button onclick="acceptPolicies()">Accetto</button>
     </div>
   </div>
 
   <script>
-    function closeModal() {
+    function openModal() {
+      document.getElementById('privacyModal').style.display = 'flex';
+    }
+
+    function acceptPolicies() {
       document.getElementById('privacyModal').style.display = 'none';
-      localStorage.setItem('privacyAccepted', 'true');
+      localStorage.setItem('policiesAccepted', 'true');
     }
-    function validateForm() {
-      const check = document.getElementById('acceptPrivacy');
-      if (!check.checked) {
-        alert("Devi accettare la Privacy Policy per continuare.");
-        return false;
-      }
-      return true;
-    }
-    window.onload = function() {
-      if (localStorage.getItem('privacyAccepted') === 'true') {
-        document.getElementById('privacyModal').style.display = 'none';
+
+    // Mostrar modal solo si no se ha aceptado antes
+    window.onload = function () {
+      if (!localStorage.getItem('policiesAccepted')) {
+        openModal();
       }
     };
   </script>

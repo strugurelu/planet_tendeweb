@@ -369,4 +369,40 @@
 
   <a
     href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr"
-    target
+    target  <!-- BOTÓN MAP -->
+  <a
+    href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp?hl=es&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    class="btn-gallery"
+    style="position: fixed; right: 20px; bottom: 70px; background-color: #0b7a99;"
+    >Map</a
+  >
+
+  <!-- BOTÓN FACEBOOK -->
+  <a
+    href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr"
+    target="_blank"
+    class="facebook-btn"
+    aria-label="Facebook"
+    ><i class="fab fa-facebook-f"></i
+  ></a>
+
+  <script>
+    // Testimonios rotativos
+    const testimonials = [
+      "“Eccellente servizio e qualità!” - Marco",
+      "“Personale molto professionale.” - Lucia",
+      "“Consiglio vivamente Planet Tende.” - Giovanni"
+    ];
+    let idx = 0;
+    const container = document.getElementById("testimonial-container");
+    function showTestimonial() {
+      container.textContent = testimonials[idx];
+      idx = (idx + 1) % testimonials.length;
+    }
+    showTestimonial();
+    setInterval(showTestimonial, 2000);
+  </script>
+</body>
+</html>
+

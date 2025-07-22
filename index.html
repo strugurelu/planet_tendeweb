@@ -24,6 +24,7 @@
       background-color: var(--dark);
       color: #fff;
       line-height: 1.5;
+      overflow-x: hidden;
     }
 
     header {
@@ -255,11 +256,12 @@
       text-decoration: none;
     }
 
+    /* Botones flotantes */
     .facebook-btn,
-    .maps-btn {
+    .maps-btn,
+    .policies-btn {
       position: fixed;
       right: 20px;
-      bottom: 20px;
       border-radius: 50%;
       padding: 15px;
       font-size: 1.5em;
@@ -270,6 +272,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
     .facebook-btn {
@@ -296,9 +300,92 @@
     .maps-btn i {
       margin-right: 5px;
     }
+
+    .policies-btn {
+      background-color: var(--accent);
+      bottom: 140px; /* arriba del botón maps */
+      font-size: 1.2em;
+      color: var(--primary);
+    }
+
+    .policies-btn:hover {
+      transform: scale(1.1);
+      background-color: #e0a621;
+    }
+
+    /* --- MODAL POLITICAS --- */
+    #policies-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    #policies-modal.hidden {
+      display: none;
+    }
+
+    #policies-content {
+      background: #fff;
+      color: #333;
+      max-width: 800px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    #policies-content h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    #policies-content p,
+    #policies-content ul {
+      font-size: 0.95em;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    #accept-btn {
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 7px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    #accept-btn:hover {
+      background-color: #004a55;
+    }
+
+    /* Scrollbar para modal */
+    #policies-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    #policies-content::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <img src="images/logo.png" alt="Planet Tende da Sole" />
     <h1>Planet Tende da Sole</h1>
@@ -383,38 +470,96 @@
     <i class="fab fa-facebook-f"></i>
   </a>
 
+  <!-- Botón Políticas -->
+  <button class="policies-btn" id="open-policies-btn" title="Condizioni e Politiche">
+    <i class="fas fa-file-contract"></i>
+  </button>
+
+  <!-- MODAL POLÍTICAS Y CONDICIONES -->
+  <div id="policies-modal">
+    <div id="policies-content">
+      <h2>Condizioni e Politiche di Privacy</h2>
+      <p>Benvenuto nel sito Planet Tende da Sole. La tua privacy è importante per noi. Di seguito troverai le condizioni e le politiche che regolano l’uso di questo sito.</p>
+
+      <h3>Raccolta dei dati personali</h3>
+      <p>Raccogliamo informazioni come nome, email e messaggi inviati tramite il modulo di contatto per rispondere alle tue richieste.</p>
+
+      <h3>Uso dei dati</h3>
+      <p>I dati raccolti saranno utilizzati esclusivamente per fornire i servizi richiesti e non saranno condivisi con terze parti senza il tuo consenso.</p>
+
+      <h3>Cookie</h3>
+      <p>Questo sito utilizza cookie tecnici per migliorare l’esperienza di navigazione. Non vengono usati cookie di profilazione.</p>
+
+      <h3>Diritti degli utenti</h3>
+      <p>Puoi richiedere la modifica, cancellazione o accesso ai tuoi dati personali in qualsiasi momento contattandoci.</p>
+
+      <h3>Modifiche alle politiche</h3>
+      <p>Ci riserviamo il diritto di aggiornare queste condizioni. Le modifiche saranno pubblicate in questa pagina.</p>
+
+      <button id="accept-btn">Accetto</button>
+    </div>
+  </div>
+
   <script>
+    // Testimonianze rotanti
     const testimonials = [
       {
-        text: "Servizio eccellente e prodotti di alta qualità. Le tende hanno trasformato il mio giardino!",
-        author: "- Marco R.",
+        text: "Servizio impeccabile, tende di alta qualità e montaggio veloce.",
+        author: "Marco R."
       },
       {
-        text: "Molto professionali e attenti alle esigenze. Consiglio vivamente Planet Tende da Sole.",
-        author: "- Lucia M.",
+        text: "Consiglio Planet Tende, professionali e affidabili.",
+        author: "Lucia B."
       },
       {
-        text: "Installazione veloce e ottimo rapporto qualità-prezzo.",
-        author: "- Giovanni F.",
-      },
+        text: "Cambio tessuto perfetto, il mio balcone sembra nuovo!",
+        author: "Federico M."
+      }
     ];
 
     let currentIndex = 0;
-    const testimonialElement = document.getElementById("testimonial-rotating");
+    const testimonialEl = document.getElementById('testimonial-rotating');
 
-    function showTestimonial(index) {
-      testimonialElement.innerHTML = `
-        “${testimonials[index].text}”
-        <div class="testimonial-author">${testimonials[index].author}</div>
-      `;
+    function showTestimonial() {
+      const t = testimonials[currentIndex];
+      testimonialEl.innerHTML = `"${t.text}"<div class="testimonial-author">- ${t.author}</div>`;
+      currentIndex = (currentIndex + 1) % testimonials.length;
     }
 
-    showTestimonial(currentIndex);
+    showTestimonial();
+    setInterval(showTestimonial, 8000);
 
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % testimonials.length;
-      showTestimonial(currentIndex);
-    }, 2000);
+    // Modal políticas
+    const modal = document.getElementById('policies-modal');
+    const acceptBtn = document.getElementById('accept-btn');
+    const openPoliciesBtn = document.getElementById('open-policies-btn');
+
+    acceptBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    openPoliciesBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    // Evitar scroll cuando modal está abierto
+    function toggleBodyScroll(allowScroll) {
+      document.body.style.overflow = allowScroll ? '' : 'hidden';
+    }
+
+    // Control overflow body
+    const observer = new MutationObserver(() => {
+      if (!modal.classList.contains('hidden')) {
+        toggleBodyScroll(false);
+      } else {
+        toggleBodyScroll(true);
+      }
+    });
+
+    observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+
+    // Al cargar, deshabilitar scroll
+    toggleBodyScroll(false);
   </script>
 </body>
 </html>

@@ -216,51 +216,6 @@
       cursor: pointer;
     }
 
-    /* --- TESTIMONIANZE --- */
-    .testimonials {
-      background-color: #005c6b;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .testimonials h2 {
-      color: var(--accent);
-      margin-bottom: 30px;
-      font-size: 2em;
-    }
-
-    .testimonial-slider {
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonial {
-      display: none;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .testimonial.active {
-      display: block;
-    }
-
-    .testimonial p {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-      color: #eaeaea;
-    }
-
-    .testimonial span {
-      font-weight: bold;
-      color: var(--accent);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -291,6 +246,25 @@
     .facebook-btn:hover {
       transform: scale(1.1);
       background-color: #145db2;
+    }
+
+    .map-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 80px;
+      background-color: #34a853;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.5em;
+      text-align: center;
+      z-index: 100;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .map-btn:hover {
+      transform: scale(1.1);
+      background-color: #2c8c45;
     }
   </style>
 </head>
@@ -340,43 +314,19 @@
     </form>
   </section>
 
-  <!-- TESTIMONIANZE -->
-  <section class="testimonials">
-    <h2>Cosa Dicono i Nostri Clienti</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial active">
-        <p>“Servizio eccellente, tende perfette per il mio terrazzo!”</p>
-        <span>- Marco R.</span>
-      </div>
-      <div class="testimonial">
-        <p>“Installazione veloce e materiali di alta qualità. Consigliatissimi!”</p>
-        <span>- Giulia P.</span>
-      </div>
-      <div class="testimonial">
-        <p>“Ottimo rapporto qualità-prezzo. Personale gentile e disponibile.”</p>
-        <span>- Andrea L.</span>
-      </div>
-    </div>
-  </section>
-
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | 
+    <a href="privacy.html">Privacy Policy</a> | 
+    Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
+
+  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp?hl=es&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" 
+     target="_blank" class="map-btn">
+    <i class="fas fa-map-marker-alt"></i>
+  </a>
 
   <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
     <i class="fab fa-facebook-f"></i>
   </a>
-
-  <script>
-    // Slider automatico per testimonianze
-    let testimonials = document.querySelectorAll('.testimonial');
-    let index = 0;
-
-    setInterval(() => {
-      testimonials[index].classList.remove('active');
-      index = (index + 1) % testimonials.length;
-      testimonials[index].classList.add('active');
-    }, 4000);
-  </script>
 </body>
 </html>

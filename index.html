@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
       --primary: #006D7F;
@@ -20,7 +17,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
 
     body {
@@ -76,12 +73,8 @@
     }
 
     @keyframes tendaAnim {
-      0% {
-        transform: translateY(-10%);
-      }
-      100% {
-        transform: translateY(10%);
-      }
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(10%); }
     }
 
     .hero-text {
@@ -136,36 +129,32 @@
       text-decoration: none;
       border-radius: 8px;
       transition: background 0.3s;
-      cursor: pointer;
     }
 
     .btn-gallery:hover {
       background-color: #ffd166;
     }
 
-    /* Botones extra para Tende a Braccia y Tende a Caduta */
-    .btn-extra-container {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+    /* --- BOTONES GALERÍA --- */
+    .button-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #005c6b;
     }
 
-    .btn-extra {
-      background-color: #f9b233;
-      color: #004e5a;
-      padding: 10px 18px;
-      font-weight: 700;
-      border-radius: 8px;
+    .gallery-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: var(--primary);
+      font-weight: bold;
       text-decoration: none;
-      transition: background-color 0.3s;
-      cursor: pointer;
-      border: none;
-      font-size: 1em;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
-    .btn-extra:hover {
+    .gallery-button:hover {
       background-color: #ffd166;
     }
 
@@ -233,8 +222,7 @@
       flex-direction: column;
     }
 
-    .contact input,
-    .contact textarea {
+    .contact input, .contact textarea {
       padding: 10px;
       margin: 10px 0;
       border: none;
@@ -251,126 +239,42 @@
       cursor: pointer;
     }
 
-    /* --- TESTIMONIALS --- */
-    .testimonials {
-      background-color: #006d7f;
-      color: white;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 40px auto;
-      border-radius: 12px;
+    footer {
       text-align: center;
-      font-style: italic;
-      font-size: 1.2em;
-      min-height: 120px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 20px;
+      background-color: var(--primary);
+      color: #ccc;
+      font-size: 0.9em;
     }
 
-    .testimonial-quote {
-      margin-bottom: 15px;
-      font-size: 1.3em;
+    footer a {
+      color: #ccc;
+      text-decoration: none;
     }
 
-    .testimonial-author {
-      font-weight: 700;
-      font-style: normal;
-      color: #ffd166;
-    }
-
-    /* --- Pulsantes fijos --- */
-    .facebook-btn,
-    .maps-btn {
+    .facebook-btn {
       position: fixed;
       right: 20px;
       bottom: 20px;
+      background-color: #1877f2;
+      color: white;
       border-radius: 50%;
       padding: 15px;
       font-size: 1.5em;
       text-align: center;
       z-index: 100;
       transition: transform 0.3s ease, background-color 0.3s ease;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .facebook-btn {
-      background-color: #1877f2;
-      bottom: 20px;
     }
 
     .facebook-btn:hover {
       transform: scale(1.1);
       background-color: #145db2;
     }
-
-    .maps-btn {
-      background-color: #00897b;
-      bottom: 80px;
-    }
-
-    .maps-btn:hover {
-      transform: scale(1.1);
-      background-color: #00695c;
-    }
-
-    /* --- Modal Politiche e Condizioni --- */
-    #policyModal {
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #policyModalContent {
-      background-color: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      max-height: 80vh;
-      overflow-y: auto;
-      text-align: left;
-    }
-
-    #policyModalContent h2 {
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    #policyModalContent p {
-      margin-bottom: 15px;
-      line-height: 1.4;
-      font-size: 0.95em;
-    }
-
-    #acceptPolicyBtn {
-      display: block;
-      margin: 0 auto;
-      margin-top: 10px;
-      padding: 10px 25px;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole" />
+    <img src="images/logo.png" alt="Planet Tende da Sole">
     <h1>Planet Tende da Sole</h1>
     <p>Tende di un altro pianeta</p>
   </header>
@@ -386,160 +290,48 @@
   <section class="prima-dopo-preview">
     <h2>Prima & Dopo</h2>
     <div class="prima-dopo-images">
-      <img src="images/prima1.jpeg" alt="Prima 1" />
-      <img src="images/dopo1.jpeg" alt="Dopo 1" />
+      <img src="images/prima1.jpeg" alt="Prima 1">
+      <img src="images/dopo1.jpeg" alt="Dopo 1">
     </div>
     <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
-
-    <!-- Botones para Tende a Caduta y Tende a Braccia -->
-    <div class="btn-extra-container">
-      <a href="tende-caduta.html" class="btn-extra">Tende a Caduta</a>
-      <a href="tende-a-braccia.html" class="btn-extra">Tende a Braccia</a>
-    </div>
   </section>
+
+  <!-- BOTONES GALERÍAS -->
+  <div class="button-container">
+    <a href="prima-dopo.html" class="gallery-button">Prima & Dopo</a>
+    <a href="tende-caduta.html" class="gallery-button">Tende a Caduta</a>
+    <a href="tende-a-braccia.html" class="gallery-button">Tende a Braccia</a>
+    <a href="cappottina.html" class="gallery-button">Cappottina</a>
+  </div>
 
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-sun"></i>
-        <p>Tende da sole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sync-alt"></i>
-        <p>Cambio tessuto</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-bug"></i>
-        <p>Zanzariere</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-warehouse"></i>
-        <p>Coperture in PVC</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-tree"></i>
-        <p>Pergole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sliders-h"></i>
-        <p>Veneziane</p>
-      </div>
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
+      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
+      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
+      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
+      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
+      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
     </div>
   </section>
 
   <section class="contact">
     <h2>Contattaci</h2>
     <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea
-        name="message"
-        placeholder="Messaggio"
-        rows="5"
-        required
-      ></textarea>
+      <input type="text" name="name" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
       <button type="submit">Invia</button>
     </form>
   </section>
 
-  <!-- Sección de Testimonios -->
-  <section class="testimonials" aria-live="polite" aria-atomic="true">
-    <div class="testimonial-quote" id="testimonial-quote">
-      “Planet Tende ha trasformato il mio balcone in un'oasi di relax!”
-    </div>
-    <div class="testimonial-author" id="testimonial-author">- Marco R.</div>
-  </section>
-
-  <!-- Modal Politiche e Condizioni -->
-  <div id="policyModal">
-    <div id="policyModalContent">
-      <h2>Termini e Condizioni</h2>
-      <p>
-        Raccolta dati: Raccogliamo dati personali come nome, email e messaggi
-        inviati tramite il modulo di contatto per rispondere alle tue richieste.
-      </p>
-      <p>
-        Uso dei dati: I dati raccolti saranno utilizzati esclusivamente per fini
-        comunicativi e non saranno condivisi con terze parti.
-      </p>
-      <p>
-        Cookie: Utilizziamo cookie tecnici per migliorare l’esperienza di
-        navigazione.
-      </p>
-      <button id="acceptPolicyBtn">Accetto</button>
-    </div>
-  </div>
-
-  <!-- Pulsanti fissi in basso a destra -->
-  <a
-    href="https://www.google.com/maps/place/Planet+Tende+da+Sole/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="maps-btn"
-    title="Vai a Maps"
-    ><i class="fas fa-map-marker-alt"></i
-  ></a>
-  <a
-    href="https://www.facebook.com/planet.tendedasole"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="facebook-btn"
-    title="Facebook"
-    ><i class="fab fa-facebook-f"></i
-  ></a>
-
   <footer>
-    &copy; 2025 Planet Tende da Sole. Tutti i diritti riservati.
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
-  <script>
-    // Mostra modal di termini e condizioni finché non accettato
-    const policyModal = document.getElementById("policyModal");
-    const acceptPolicyBtn = document.getElementById("acceptPolicyBtn");
-
-    acceptPolicyBtn.addEventListener("click", () => {
-      policyModal.style.display = "none";
-      localStorage.setItem("policyAccepted", "true");
-    });
-
-    window.onload = () => {
-      if (localStorage.getItem("policyAccepted") === "true") {
-        policyModal.style.display = "none";
-      } else {
-        policyModal.style.display = "flex";
-      }
-
-      startTestimonialRotation();
-    };
-
-    // Testimonios rotativos
-    const testimonials = [
-      {
-        quote: "“Planet Tende ha trasformato il mio balcone in un'oasi di relax!”",
-        author: "- Marco R.",
-      },
-      {
-        quote: "“Servizio rapido e professionale, altamente consigliato.”",
-        author: "- Lucia M.",
-      },
-      {
-        quote: "“La qualità delle tende è eccellente e il prezzo giusto.”",
-        author: "- Giovanni P.",
-      },
-    ];
-
-    let testimonialIndex = 0;
-    const testimonialQuoteEl = document.getElementById("testimonial-quote");
-    const testimonialAuthorEl = document.getElementById("testimonial-author");
-
-    function startTestimonialRotation() {
-      setInterval(() => {
-        testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-        testimonialQuoteEl.textContent = testimonials[testimonialIndex].quote;
-        testimonialAuthorEl.textContent = testimonials[testimonialIndex].author;
-      }, 2000);
-    }
-  </script>
+  <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
+    <i class="fab fa-facebook-f"></i>
+  </a>
 </body>
 </html>

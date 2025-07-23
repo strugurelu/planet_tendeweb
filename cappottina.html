@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cappottina - Planet Tende da Sole</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #004e5a;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #006d7f;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #f9b233;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      border: 3px solid #f9b233;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .back-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #f9b233;
+      color: #004e5a;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 200px;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #ffd166;
+    }
+
+    /* Modal full-screen */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cappottina</h1>
+  </header>
+
+  <a href="index.html" class="back-button">← Torna Indietro</a>
+
+  <div class="gallery">
+    <img src="images/Cappottina1.jpeg" alt="Cappottina 1" />
+    <img src="images/Cappottina2.jpeg" alt="Cappottina 2" />
+    <img src="images/Cappottina3.jpeg" alt="Cappottina 3" />
+    <img src="images/Cappottina4.jpeg" alt="Cappottina 4" />
+    <img src="images/Cappottina5.jpeg" alt="Cappottina 5" />
+    <img src="images/Cappottina6.jpeg" alt="Cappottina 6" />
+    <img src="images/Cappottina7.jpeg" alt="Cappottina 7" />
+    <img src="images/Cappottina8.jpeg" alt="Cappottina 8" />
+    <img src="images/Cappottina9.jpeg" alt="Cappottina 9" />
+    <img src="images/Cappottina10.jpeg" alt="Cappottina 10" />
+    <img src="images/Cappottina11.jpeg" alt="Cappottina 11" />
+    <img src="images/Cappottina12.jpeg" alt="Cappottina 12" />
+    <img src="images/Cappottina13.jpeg" alt="Cappottina 13" />
+    <img src="images/Cappottina14.jpeg" alt="Cappottina 14" />
+    <img src="images/Cappottina15.jpeg" alt="Cappottina 15" />
+    <img src="images/Cappottina16.jpeg" alt="Cappottina 16" />
+    <img src="images/Cappottina17.jpeg" alt="Cappottina 17" />
+    <img src="images/Cappottina18.jpeg" alt="Cappottina 18" />
+  </div>
+
+  <!-- Modal -->
+  <div id="imgModal" class="modal">
+    <span class="close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" />
+  </div>
+
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalClose = document.getElementById("modalClose");
+    const images = document.querySelectorAll(".gallery img");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    modalClose.onclick = () => {
+      modal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

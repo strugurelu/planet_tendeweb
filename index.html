@@ -2,10 +2,10 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
   <style>
     :root {
       --primary: #006D7F;
@@ -73,13 +73,8 @@
     }
 
     @keyframes tendaAnim {
-      0% {
-        transform: translateY(-10%);
-      }
-
-      100% {
-        transform: translateY(10%);
-      }
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(10%); }
     }
 
     .hero-text {
@@ -227,8 +222,7 @@
       flex-direction: column;
     }
 
-    .contact input,
-    .contact textarea {
+    .contact input, .contact textarea {
       padding: 10px;
       margin: 10px 0;
       border: none;
@@ -258,8 +252,7 @@
       text-decoration: none;
     }
 
-    .facebook-btn,
-    .maps-btn {
+    .facebook-btn, .maps-btn {
       position: fixed;
       right: 20px;
       border-radius: 50%;
@@ -291,23 +284,12 @@
       background-color: #2c8c44;
     }
 
-    /* Añadido: Animación para testimonios rotativos */
+    /* --- TESTIMONIALS SLIDER ANIMATION --- */
     @keyframes slide {
-      0% {
-        transform: translateX(0%);
-      }
-
-      33.333% {
-        transform: translateX(-100%);
-      }
-
-      66.666% {
-        transform: translateX(-200%);
-      }
-
-      100% {
-        transform: translateX(0%);
-      }
+      0% { transform: translateX(0); }
+      33.3333% { transform: translateX(0); }
+      66.6666% { transform: translateX(-33.3333%); }
+      100% { transform: translateX(-66.6666%); }
     }
   </style>
 </head>
@@ -346,37 +328,29 @@
   <section class="services">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-sun"></i>
-        <p>Tende da sole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sync-alt"></i>
-        <p>Cambio tessuto</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-bug"></i>
-        <p>Zanzariere</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-warehouse"></i>
-        <p>Coperture in PVC</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-tree"></i>
-        <p>Pergole</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-sliders-h"></i>
-        <p>Veneziane</p>
-      </div>
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
+      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
+      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
+      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
+      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
+      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
     </div>
   </section>
 
-  <!-- INICIO SECCIÓN TESTIMONIOS -->
+  <section class="contact">
+    <h2>Contattaci</h2>
+    <form action="https://formspree.io/f/myzpkonj" method="POST">
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <!-- SECCIÓN TESTIMONIOS DEBAJO DEL CONTACTO, SIN FONDO OSCURO -->
   <section
     class="testimonials"
-    style="background-color: #003f4a; padding: 40px 20px; text-align: center; color: #fff;"
+    style="padding: 40px 20px; text-align: center; color: #000;"
   >
     <h2 style="color: var(--accent); font-size: 2em; margin-bottom: 30px;">
       Cosa Dicono i Nostri Clienti
@@ -418,17 +392,6 @@
         </div>
       </div>
     </div>
-  </section>
-  <!-- FIN SECCIÓN TESTIMONIOS -->
-
-  <section class="contact">
-    <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
   </section>
 
   <footer>

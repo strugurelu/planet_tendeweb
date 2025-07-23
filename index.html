@@ -135,29 +135,6 @@
       background-color: #ffd166;
     }
 
-    /* --- BOTONES GALERÍA --- */
-    .button-container {
-      text-align: center;
-      padding: 20px;
-      background-color: #005c6b;
-    }
-
-    .gallery-button {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .gallery-button:hover {
-      background-color: #ffd166;
-    }
-
     /* --- SERVIZI --- */
     .services {
       padding: 40px 20px;
@@ -239,6 +216,26 @@
       cursor: pointer;
     }
 
+    /* --- TESTIMONI --- */
+    .testimonials {
+      background-color: #005c6b;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      color: var(--accent);
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .testimonial {
+      font-size: 1.2em;
+      font-style: italic;
+      transition: opacity 0.5s ease;
+    }
+
+    /* --- FOOTER --- */
     footer {
       text-align: center;
       padding: 20px;
@@ -252,23 +249,77 @@
       text-decoration: none;
     }
 
-    .facebook-btn {
+    /* --- BUTTONS --- */
+    .facebook-btn, .maps-btn {
       position: fixed;
       right: 20px;
-      bottom: 20px;
-      background-color: #1877f2;
-      color: white;
       border-radius: 50%;
       padding: 15px;
       font-size: 1.5em;
       text-align: center;
       z-index: 100;
       transition: transform 0.3s ease, background-color 0.3s ease;
+      color: white;
+    }
+
+    .facebook-btn {
+      bottom: 20px;
+      background-color: #1877f2;
     }
 
     .facebook-btn:hover {
       transform: scale(1.1);
       background-color: #145db2;
+    }
+
+    .maps-btn {
+      bottom: 80px;
+      background-color: #34a853;
+    }
+
+    .maps-btn:hover {
+      transform: scale(1.1);
+      background-color: #2c8e44;
+    }
+
+    /* --- MODAL POLITICAS --- */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      max-width: 500px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+
+    .modal-content button {
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -288,21 +339,13 @@
 
   <!-- SECCION PRIMA & DOPO PREVIEW -->
   <section class="prima-dopo-preview">
-    <h2>Prima & Dopo</h2>
+    <h2>Sostituzione tessuto e manutenzione</h2>
     <div class="prima-dopo-images">
       <img src="images/prima1.jpeg" alt="Prima 1">
       <img src="images/dopo1.jpeg" alt="Dopo 1">
     </div>
     <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
   </section>
-
-  <!-- BOTONES GALERÍAS -->
-  <div class="button-container">
-    <a href="prima-dopo.html" class="gallery-button">Prima & Dopo</a>
-    <a href="tende-caduta.html" class="gallery-button">Tende a Caduta</a>
-    <a href="tende-a-braccia.html" class="gallery-button">Tende a Braccia</a>
-    <a href="cappottina.html" class="gallery-button">Cappottina</a>
-  </div>
 
   <section class="services">
     <h2>I Nostri Servizi</h2>
@@ -326,12 +369,59 @@
     </form>
   </section>
 
+  <!-- TESTIMONI -->
+  <section class="testimonials">
+    <h2>Cosa dicono i nostri clienti</h2>
+    <p class="testimonial" id="testimonial">"Servizio eccellente e tende di alta qualità!"</p>
+  </section>
+
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | Powered by 
+    <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
+
+  <!-- BOTONES FLOTANTES -->
+  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718082,12.7317611,17z/data=!3m1!4b1!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp" target="_blank" class="maps-btn">
+    <i class="fas fa-map-marker-alt"></i>
+  </a>
 
   <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
     <i class="fab fa-facebook-f"></i>
   </a>
+
+  <!-- MODAL POLITICAS -->
+  <div class="modal" id="policyModal">
+    <div class="modal-content">
+      <h3>Condizioni e Politiche</h3>
+      <p>Utilizzando questo sito, accetti le nostre politiche di privacy e condizioni d'uso. Leggi attentamente le informazioni.</p>
+      <button onclick="acceptPolicy()">Accetta</button>
+    </div>
+  </div>
+
+  <script>
+    // TESTIMONIOS ROTANTES
+    const testimonials = [
+      '"Servizio eccellente e tende di alta qualità!"',
+      '"Personale gentile e lavoro impeccabile!"',
+      '"Consiglio vivamente Planet Tende da Sole!"'
+    ];
+    let tIndex = 0;
+    setInterval(() => {
+      tIndex = (tIndex + 1) % testimonials.length;
+      document.getElementById('testimonial').innerText = testimonials[tIndex];
+    }, 2000);
+
+    // MODAL POLITICAS
+    const policyModal = document.getElementById("policyModal");
+    function acceptPolicy() {
+      policyModal.style.display = "none";
+      localStorage.setItem("policyAccepted", "true");
+    }
+    window.onload = () => {
+      if (!localStorage.getItem("policyAccepted")) {
+        policyModal.style.display = "flex";
+      }
+    };
+  </script>
 </body>
 </html>

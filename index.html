@@ -11,220 +11,216 @@
       --primary: #006D7F;
       --accent: #f9b233;
       --dark: #004e5a;
+      --light: #f0f0f0;
     }
-    * {
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
     }
     body {
-      background-color: var(--dark);
-      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
       line-height: 1.6;
+      background: var(--light);
     }
-    a {
-      text-decoration: none;
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+    /* Header/Nav */
+    header {
+      background: var(--primary);
+      color: #fff;
     }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    /* NAVBAR */
-    .navbar .container {
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 0;
-      position: relative;
     }
     .navbar .brand img {
       height: 50px;
     }
-    .toggle {
+    .nav-toggle {
+      font-size: 1.5rem;
       background: none;
       border: none;
-      font-size: 1.5rem;
       color: #fff;
       cursor: pointer;
+      display: block;
     }
     .nav-menu {
       list-style: none;
       display: none;
       flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 0;
       background: var(--primary);
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
     }
-    .nav-menu li a {
-      display: block;
-      padding: 1rem;
+    .nav-menu a {
       color: #fff;
+      font-weight: 700;
     }
-    .nav-menu.active {
-      display: flex;
-    }
-    @media (min-width: 768px) {
-      .toggle { display: none; }
+    @media(min-width: 768px) {
+      .nav-toggle { display: none; }
       .nav-menu {
         display: flex;
-        position: static;
         flex-direction: row;
         background: none;
-        width: auto;
+        padding: 0;
+        gap: 2rem;
       }
-      .nav-menu li a { padding: 0 1rem; }
     }
-    /* HERO */
+
+    /* Hero */
     .hero {
-      height: 60vh;
+      position: relative;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(to bottom right, var(--accent), var(--primary));
+      background-image: url('https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/hero.jpg');
+      background-size: cover;
+      background-position: center;
       text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
       color: #fff;
     }
-    /* SERVICES */
-    .services {
-      padding: 60px 0;
-      text-align: center;
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
     }
-    .services h2 {
+    .hero h1 {
+      position: relative;
       font-size: 2rem;
-      color: var(--accent);
+      padding: 0 1rem;
+    }
+
+    /* Services */
+    #services {
+      padding: 3rem 0;
+      background: #fff;
+    }
+    #services h2 {
+      text-align: center;
+      color: var(--primary);
       margin-bottom: 2rem;
+      font-size: 1.75rem;
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
     .service-card {
-      background: var(--primary);
+      background: var(--accent);
+      color: var(--dark);
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      text-align: center;
       transition: transform 0.3s;
     }
-    .service-card:hover {
-      transform: translateY(-8px);
+    .service-card i { font-size: 2rem; margin-bottom: 0.5rem; }
+    .service-card:hover { transform: translateY(-5px); }
+    @media(min-width: 600px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    .service-card i {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent);
+    @media(min-width: 992px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
     }
-    /* GALLERY */
-    .gallery {
-      padding: 60px 0;
-      background: #005c6b;
+
+    /* Gallery */
+    #gallery {
+      padding: 3rem 0;
+      background: var(--light);
+    }
+    #gallery h2 {
       text-align: center;
-    }
-    .gallery h2 {
-      font-size: 2rem;
-      color: var(--accent);
+      color: var(--primary);
       margin-bottom: 1.5rem;
+      font-size: 1.75rem;
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1rem;
     }
+    @media(min-width: 600px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(min-width: 992px) {
+      .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+    }
     .gallery-grid img {
-      width: 100%;
-      border-radius: 8px;
+      border-radius: 5px;
       transition: transform 0.3s;
     }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    /* Contact */
+    #contact {
+      padding: 3rem 0;
+      background: #fff;
     }
-    .gallery .btn {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: var(--primary);
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .gallery .btn:hover {
-      background: #ffd166;
-    }
-    /* CONTACT */
-    .contact {
-      padding: 60px 0;
+    #contact h2 {
       text-align: center;
-    }
-    .contact h2 {
-      font-size: 2rem;
-      color: var(--accent);
+      color: var(--primary);
       margin-bottom: 1.5rem;
+      font-size: 1.75rem;
     }
-    .contact form {
-      max-width: 400px;
+    .contact-form {
+      max-width: 500px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    .contact input,
-    .contact textarea {
+    .contact-form input,
+    .contact-form textarea {
       padding: 0.75rem;
-      border: none;
+      border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: 1rem;
     }
-    .contact button {
+    .contact-form button {
       padding: 0.75rem;
-      background: var(--accent);
+      background: var(--primary);
+      color: #fff;
       border: none;
       border-radius: 5px;
-      color: var(--primary);
-      font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
     }
-    .contact button:hover {
-      background: #ffd166;
-    }
-    /* FOOTER */
+    .contact-form button:hover { background: var(--dark); }
+
+    /* Footer */
     footer {
       background: var(--primary);
-      padding: 2rem 0;
-      color: #ccc;
+      color: #fff;
       text-align: center;
+      padding: 2rem 0;
     }
     .footer-links,
     .social {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
       margin-top: 1rem;
     }
-    .social a {
-      font-size: 1.5rem;
-      color: #fff;
-      transition: transform 0.3s;
-    }
-    .social a:hover {
-      transform: scale(1.1);
-    }
+    .social a { font-size: 1.5rem; color: #fff; }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <a href="#" class="brand"><img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/logo.png" alt="Planet Tende da Sole Logo"></a>
-      <button class="toggle" id="navToggle"><i class="fas fa-bars"></i></button>
-      <ul class="nav-menu" id="navMenu">
+  <header>
+    <div class="container navbar">
+      <a href="#" class="brand"><img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/logo.png" alt="Planet Tende da Sole"></a>
+      <button class="nav-toggle" aria-label="Apri menu"><i class="fas fa-bars"></i></button>
+      <ul class="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="#services">Servizi</a></li>
         <li><a href="#gallery">Galleria</a></li>
@@ -238,7 +234,7 @@
   </section>
 
   <main class="container">
-    <section id="services" class="services">
+    <section id="services">
       <h2>I Nostri Servizi</h2>
       <div class="services-grid">
         <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
@@ -250,18 +246,18 @@
       </div>
     </section>
 
-    <section id="gallery" class="gallery">
+    <section id="gallery">
       <h2>Prima & Dopo</h2>
       <div class="gallery-grid">
-        <img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/prima1.jpeg" alt="Prima Progetto 1">
-        <img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/dopo1.jpeg" alt="Dopo Progetto 1">
+        <img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/prima1.jpeg" alt="Prima 1">
+        <img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/dopo1.jpeg" alt="Dopo 1">
+        <!-- Aggiungi altre immagini se vuoi -->
       </div>
-      <a href="prima-dopo.html" class="btn">Vedi la Galleria Completa</a>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact">
       <h2>Contattaci</h2>
-      <form action="https://formspree.io/f/myzpkonj" method="POST">
+      <form class="contact-form" action="https://formspree.io/f/myzpkonj" method="POST">
         <input type="text" name="name" placeholder="Nome" required>
         <input type="email" name="email" placeholder="Email" required>
         <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
@@ -275,19 +271,20 @@
     <ul class="footer-links">
       <li><a href="condizioni.html">Condizioni</a></li>
       <li><a href="privacy.html">Privacy</a></li>
-      <li>Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a></li>
+      <li>Powered by <a href="https://strgrweb.com" target="_blank" rel="noopener">strgrweb.com</a></li>
     </ul>
-    <div class="social">
-      <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
-    </div>
+    <ul class="social">
+      <li><a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i></a></li>
+    </ul>
   </footer>
 
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+    // Toggle menu mobile
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
     });
   </script>
 </body>

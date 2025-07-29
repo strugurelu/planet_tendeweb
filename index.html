@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Planet Tende da Sole</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -10,94 +10,64 @@
     :root {
       --primary: #0b6983;
       --accent: #f9b233;
-      --dark: #0b6983;
+      --bg: #eaf7f9;
     }
 
     * {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
     }
 
     body {
-      background-color: var(--dark);
-      color: #fff;
-      line-height: 1.5;
+      background-color: var(--bg);
+      color: #333;
     }
 
     header {
       background-color: var(--primary);
+      color: white;
       padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      text-align: center;
     }
 
     header img {
-      max-width: 180px;
+      max-width: 150px;
     }
 
     header h1 {
+      margin: 10px 0 5px;
+      font-size: 2rem;
       color: var(--accent);
-      font-size: 2em;
-      margin: 0 auto;
     }
 
     header p {
-      font-size: 1em;
-      color: #eaeaea;
-      text-align: center;
-      width: 100%;
+      font-size: 1rem;
     }
 
     .hero {
-      position: relative;
-      height: 300px;
-      background: linear-gradient(to bottom, var(--accent), var(--primary));
+      background: url('images/hero.jpg') center/cover no-repeat;
+      height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-    }
-
-    .tenda {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(45deg, var(--accent), var(--accent) 20px, var(--primary) 20px, var(--primary) 40px);
-      animation: tendaAnim 3s infinite alternate;
-      z-index: 1;
-    }
-
-    @keyframes tendaAnim {
-      0% { transform: translateY(-10%); }
-      100% { transform: translateY(10%); }
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 2;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      font-size: 2.5rem;
       text-align: center;
     }
 
-    .hero-text h2 {
-      font-size: 2.5em;
-      color: #fff;
-      text-shadow: 2px 2px 4px #00000055;
-    }
-
-    .prima-dopo-preview {
-      text-align: center;
+    .section {
       padding: 60px 20px;
-      background-color: #005c6b;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .prima-dopo-preview h2 {
-      color: var(--accent);
-      font-size: 2.2em;
-      margin-bottom: 30px;
+    .section h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
     .prima-dopo-images {
@@ -108,8 +78,8 @@
     }
 
     .prima-dopo-images img {
-      width: 280px;
-      border-radius: 12px;
+      width: 300px;
+      border-radius: 10px;
       border: 3px solid var(--accent);
       transition: transform 0.3s ease;
     }
@@ -119,134 +89,152 @@
     }
 
     .btn-gallery {
-      margin-top: 25px;
-      padding: 12px 24px;
-      background-color: var(--accent);
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--accent);
       color: var(--primary);
+      padding: 10px 20px;
       font-weight: bold;
-      border-radius: 10px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      border-radius: 8px;
     }
 
-    .btn-gallery:hover {
-      background-color: #ffd166;
-    }
-
-    .button-container {
+    .gallery-nav {
       text-align: center;
-      padding: 40px 20px;
-      background-color: #005c6b;
+      margin-top: 40px;
     }
 
-    .gallery-button {
+    .gallery-nav a {
       margin: 10px;
-      padding: 12px 24px;
+      padding: 10px 20px;
       background-color: var(--accent);
       color: var(--primary);
       font-weight: bold;
       border-radius: 8px;
       text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .gallery-button:hover {
-      background-color: #ffd166;
-    }
-
-    .services {
-      padding: 60px 20px;
-      background-color: var(--primary);
-      text-align: center;
-    }
-
-    .services h2 {
-      color: var(--accent);
-      font-size: 2.2em;
-      margin-bottom: 30px;
+      display: inline-block;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
     }
 
     .service-card {
-      background: linear-gradient(145deg, var(--primary), #008a9e);
-      color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .service-card i {
-      font-size: 2.5em;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-
-    .testimonial-section {
-      background: #004e5a;
-      padding: 60px 20px;
+      background: var(--primary);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
     }
 
-    .testimonial-section h2 {
-      font-size: 2.2em;
+    .service-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
       color: var(--accent);
+    }
+
+    .contact {
+      background: #f4f4f4;
+      padding: 50px 20px;
+    }
+
+    .contact h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 12px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .testimonial-section {
+      background: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .testimonial-section h2 {
+      color: var(--primary);
       margin-bottom: 20px;
     }
 
     .testimonial-slider {
+      font-style: italic;
+      color: #444;
       max-width: 700px;
       margin: auto;
-      font-size: 1.2em;
-      font-style: italic;
-      color: #fff;
+    }
+
+    footer {
+      background-color: var(--primary);
+      text-align: center;
+      padding: 20px;
+      color: #eee;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #eee;
+      margin: 0 10px;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Secciones principales -->
+
   <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole">
+    <img src="images/logo.png" alt="Planet Tende da Sole" />
     <h1>Planet Tende da Sole</h1>
     <p>Tende di un altro pianeta</p>
   </header>
 
-  <section class="hero">
-    <div class="tenda"></div>
-    <div class="hero-text">
-      <h2>Protezione e Design per la Tua Casa</h2>
-    </div>
-  </section>
+  <div class="hero">
+    PROTEZIONE E DESIGN PER LA TUA CASA
+  </div>
 
-  <section class="prima-dopo-preview">
+  <section class="section">
     <h2>Prima & Dopo</h2>
     <div class="prima-dopo-images">
       <img src="images/prima1.jpeg" alt="Prima 1">
       <img src="images/dopo1.jpeg" alt="Dopo 1">
     </div>
-    <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
+    <div style="text-align:center;">
+      <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
+    </div>
   </section>
 
-  <div class="button-container">
-    <a href="prima-dopo.html" class="gallery-button">Prima & Dopo</a>
-    <a href="tende-caduta.html" class="gallery-button">Tende a Caduta</a>
-    <a href="tende-a-braccia.html" class="gallery-button">Tende a Braccia</a>
-    <a href="cappottina.html" class="gallery-button">Cappottina</a>
-    <a href="pergoleestrutture.html" class="gallery-button">Pergole e Strutture</a>
+  <div class="gallery-nav">
+    <a href="prima-dopo.html">Prima & Dopo</a>
+    <a href="tende-caduta.html">Tende a Caduta</a>
+    <a href="tende-a-braccia.html">Tende a Braccia</a>
+    <a href="cappottina.html">Cappottina</a>
+    <a href="pergoleestrutture.html">Pergole e Strutture</a>
   </div>
 
-  <section class="services">
+  <section class="section">
     <h2>I Nostri Servizi</h2>
     <div class="services-grid">
       <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
@@ -261,21 +249,38 @@
   <section class="testimonial-section">
     <h2>Dicono di noi</h2>
     <div class="testimonial-slider" id="testimonial">
-      "Servizio impeccabile e tende di altissima qualità!"<br><br><strong>- Marco R.</strong>
+      "Servizio impeccabile e tende di altissima qualità!"<br><strong>- Marco R.</strong>
     </div>
   </section>
 
+  <section class="contact">
+    <h2>Contattaci</h2>
+    <form action="https://formspree.io/f/myzpkonj" method="POST">
+      <input type="text" name="name" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Planet Tende da Sole | 
+    <a href="condizioni.html">Condizioni</a> | 
+    <a href="privacy.html">Privacy</a>
+  </footer>
+
   <script>
     const testi = [
-      '"Servizio impeccabile e tende di altissima qualità!"<br><br><strong>- Marco R.</strong>',
-      '"Installazione veloce e personale molto gentile."<br><br><strong>- Laura M.</strong>',
-      '"Design elegante, materiali resistenti. Consigliati!"<br><br><strong>- Federico T.</strong>'
+      '"Servizio impeccabile e tende di altissima qualità!"<br><strong>- Marco R.</strong>',
+      '"Installazione veloce e personale molto gentile."<br><strong>- Laura M.</strong>',
+      '"Design elegante, materiali resistenti. Consigliati!"<br><strong>- Federico T.</strong>'
     ];
     let i = 0;
     setInterval(() => {
       i = (i + 1) % testi.length;
       document.getElementById("testimonial").innerHTML = testi[i];
-    }, 2000);
+    }, 3000);
   </script>
+
 </body>
 </html>

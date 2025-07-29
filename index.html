@@ -3,221 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Planet Tende da Sole - Protezione e design su misura per la tua casa. Tende, zanzariere, pergole e molto altro.">
   <title>Planet Tende da Sole</title>
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dNrw5rX..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-      --primary: #006D7F;
+      --primary: #0b6983;
       --accent: #f9b233;
       --dark: #004e5a;
       --light: #f0f0f0;
+      --transition: 0.3s;
     }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: #333;
-      line-height: 1.6;
-      background: var(--light);
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background: var(--light); }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; height: auto; display: block; }
     .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
     /* Header/Nav */
-    header {
-      background: var(--primary);
-      color: #fff;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
-    .navbar .brand img {
-      height: 50px;
-    }
-    .nav-toggle {
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      display: block;
-    }
-    .nav-menu {
-      list-style: none;
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem 0;
-      background: var(--primary);
-    }
-    .nav-menu a {
-      color: #fff;
-      font-weight: 700;
-    }
-    @media(min-width: 768px) {
+    header { background: var(--primary); color: #fff; position: sticky; top: 0; z-index: 1000; }
+    nav.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .brand img { height: 50px; }
+    .nav-toggle { font-size: 1.5rem; background: none; border: none; color: #fff; cursor: pointer; display: block; }
+    ul.nav-menu { list-style: none; display: none; flex-direction: column; gap: 1rem; padding: 1rem 0; }
+    ul.nav-menu a { color: #fff; font-weight: 700; }
+    @media (min-width: 768px) {
       .nav-toggle { display: none; }
-      .nav-menu {
-        display: flex;
-        flex-direction: row;
-        background: none;
-        padding: 0;
-        gap: 2rem;
-      }
+      ul.nav-menu { display: flex; flex-direction: row; gap: 2rem; padding: 0; }
     }
+
+    /* Section animations */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity var(--transition) ease, transform var(--transition) ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* Hero */
-    .hero {
-      position: relative;
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url('https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/hero.jpg');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      color: #fff;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-    }
-    .hero h1 {
-      position: relative;
-      font-size: 2rem;
-      padding: 0 1rem;
-    }
+    #hero.hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; background: url('https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/hero.jpg') center/cover no-repeat; text-align: center; color: #fff; }
+    #hero.hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+    #hero h1 { position: relative; font-size: 2.5rem; padding: 0 1rem; }
 
     /* Services */
-    #services {
-      padding: 3rem 0;
-      background: #fff;
-    }
-    #services h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 2rem;
-      font-size: 1.75rem;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .service-card {
-      background: var(--accent);
-      color: var(--dark);
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+    #services { padding: 3rem 0; background: #fff; }
+    #services h2 { text-align: center; color: var(--primary); margin-bottom: 2rem; font-size: 1.75rem; }
+    .services-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 992px) { .services-grid { grid-template-columns: repeat(3,1fr); } }
+    .service-card { background: var(--accent); color: var(--dark); padding: 2rem; border-radius: 8px; text-align: center; cursor: default; transition: transform var(--transition) ease; }
     .service-card i { font-size: 2rem; margin-bottom: 0.5rem; }
     .service-card:hover { transform: translateY(-5px); }
-    @media(min-width: 600px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media(min-width: 992px) {
-      .services-grid { grid-template-columns: repeat(3, 1fr); }
-    }
+
+    /* Before-After Slider */
+    .before-after { position: relative; overflow: hidden; margin: 2rem 0; }
+    .before-after img { display: block; }
+    .before-after .overlay { position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; }
+    .before-after .overlay img { position: absolute; top: 0; left: 0; }
+    .slider-handle { position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: var(--accent); cursor: ew-resize; z-index: 2; }
 
     /* Gallery */
-    #gallery {
-      padding: 3rem 0;
-      background: var(--light);
-    }
-    #gallery h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-size: 1.75rem;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    @media(min-width: 600px) {
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media(min-width: 992px) {
-      .gallery-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-    .gallery-grid img {
-      border-radius: 5px;
-      transition: transform 0.3s;
-    }
-    .gallery-grid img:hover { transform: scale(1.05); }
+    #gallery { padding: 3rem 0; background: var(--light); }
+    #gallery h2 { text-align: center; color: var(--primary); margin-bottom: 1.5rem; font-size: 1.75rem; }
+    .gallery-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 600px) { .gallery-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 992px) { .gallery-grid { grid-template-columns: repeat(4,1fr); } }
+    .gallery-grid img { border-radius: 5px; cursor: pointer; }
 
     /* Contact */
-    #contact {
-      padding: 3rem 0;
-      background: #fff;
-    }
-    #contact h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-size: 1.75rem;
-    }
-    .contact-form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    .contact-form button {
-      padding: 0.75rem;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+    #contact { padding: 3rem 0; background: #fff; }
+    #contact h2 { text-align: center; color: var(--primary); margin-bottom: 1.5rem; font-size: 1.75rem; }
+    .contact-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+    .contact-form button { padding: 0.75rem; background: var(--primary); color: #fff; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background var(--transition) ease; }
     .contact-form button:hover { background: var(--dark); }
 
+    /* Scroll to Top Button */
+    #toTop { position: fixed; bottom: 20px; right: 20px; display: none; background: var(--accent); color: var(--primary); border: none; padding: 0.75rem; border-radius: 50%; font-size: 1.25rem; cursor: pointer; transition: background var(--transition) ease; }
+    #toTop:hover { background: #ffd166; }
+
     /* Footer */
-    footer {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 0;
-    }
-    .footer-links,
-    .social {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+    footer { background: var(--primary); color: #fff; text-align: center; padding: 2rem 0; }
+    .footer-links, .social { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem; }
     .social a { font-size: 1.5rem; color: #fff; }
   </style>
 </head>
 <body>
   <header>
-    <div class="container navbar">
+    <nav class="navbar container">
       <a href="#" class="brand"><img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/logo.png" alt="Planet Tende da Sole"></a>
       <button class="nav-toggle" aria-label="Apri menu"><i class="fas fa-bars"></i></button>
       <ul class="nav-menu">
@@ -226,15 +100,15 @@
         <li><a href="#gallery">Galleria</a></li>
         <li><a href="#contact">Contatti</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <section id="hero" class="hero">
+  <section id="hero" class="hero fade-in">
     <h1>Protezione e Design per la Tua Casa</h1>
   </section>
 
   <main class="container">
-    <section id="services">
+    <section id="services" class="fade-in">
       <h2>I Nostri Servizi</h2>
       <div class="services-grid">
         <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
@@ -246,16 +120,16 @@
       </div>
     </section>
 
-    <section id="gallery">
+    <section id="gallery" class="fade-in">
       <h2>Prima & Dopo</h2>
-      <div class="gallery-grid">
-        <img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/prima1.jpeg" alt="Prima 1">
-        <img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/dopo1.jpeg" alt="Dopo 1">
-        <!-- Aggiungi altre immagini se vuoi -->
+      <div class="before-after">
+        <img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/prima1.jpeg" alt="Prima 1" loading="lazy">
+        <div class="overlay"><img src="https://raw.githubusercontent.com/strugurelu/planet_tendeweb/main/images/dopo1.jpeg" alt="Dopo 1" loading="lazy"></div>
+        <div class="slider-handle"></div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
       <h2>Contattaci</h2>
       <form class="contact-form" action="https://formspree.io/f/myzpkonj" method="POST">
         <input type="text" name="name" placeholder="Nome" required>
@@ -265,6 +139,8 @@
       </form>
     </section>
   </main>
+
+  <button id="toTop" aria-label="Torna su"><i class="fas fa-chevron-up"></i></button>
 
   <footer>
     <p>© 2025 Planet Tende da Sole. Tutti i diritti riservati.</p>
@@ -280,12 +156,46 @@
   </footer>
 
   <script>
-    // Toggle menu mobile
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-menu').classList.toggle('active');
     });
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    // Scroll to top button
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    // Before-After slider
+    const beforeAfter = document.querySelector('.before-after');
+    const overlay = beforeAfter.querySelector('.overlay');
+    const handle = beforeAfter.querySelector('.slider-handle');
+    let dragging = false;
+    const startDrag = () => dragging = true;
+    const stopDrag = () => dragging = false;
+    const onDrag = (e) => {
+      if (!dragging) return;
+      const rect = beforeAfter.getBoundingClientRect();
+      let x = (e.clientX || e.touches[0].clientX) - rect.left;
+      x = Math.max(0, Math.min(x, rect.width));
+      overlay.style.width = x + 'px';
+      handle.style.left = x + 'px';
+    };
+    handle.addEventListener('mousedown', startDrag);
+    handle.addEventListener('touchstart', startDrag);
+    window.addEventListener('mouseup', stopDrag);
+    window.addEventListener('touchend', stopDrag);
+    window.addEventListener('mousemove', onDrag);
+    window.addEventListener('touchmove', onDrag);
   </script>
 </body>
 </html>

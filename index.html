@@ -1,57 +1,50 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
-      --primary: #006D7F;
+      --primary: #0b6983;
       --accent: #f9b233;
-      --dark: #004e5a;
+      --dark: #0b6983;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
       font-family: 'Montserrat', sans-serif;
     }
 
     body {
       background-color: var(--dark);
       color: #fff;
+      line-height: 1.5;
     }
 
     header {
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       background-color: var(--primary);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     header img {
-      max-width: 160px;
-      transition: transform 0.3s ease;
-    }
-
-    header img:hover {
-      transform: scale(1.05);
+      max-width: 180px;
     }
 
     header h1 {
       color: var(--accent);
       margin-top: 10px;
-      font-size: 2.2em;
+      font-size: 2em;
     }
 
     header p {
       font-size: 1.1em;
       color: #eaeaea;
-      margin-top: 5px;
     }
 
     .hero {
@@ -68,15 +61,8 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: repeating-linear-gradient(
-        45deg,
-        var(--accent),
-        var(--accent) 20px,
-        var(--primary) 20px,
-        var(--primary) 40px
-      );
+      background: repeating-linear-gradient(45deg, var(--accent), var(--accent) 20px, var(--primary) 20px, var(--primary) 40px);
       animation: tendaAnim 3s infinite alternate;
-      opacity: 0.2;
       z-index: 1;
     }
 
@@ -92,20 +78,20 @@
     }
 
     .hero-text h2 {
-      font-size: 2.4em;
+      font-size: 2em;
       color: #fff;
     }
 
     .prima-dopo-preview {
       text-align: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
       background-color: #005c6b;
     }
 
     .prima-dopo-preview h2 {
       color: var(--accent);
-      margin-bottom: 30px;
-      font-size: 2.2em;
+      margin-bottom: 20px;
+      font-size: 2em;
     }
 
     .prima-dopo-images {
@@ -116,8 +102,8 @@
     }
 
     .prima-dopo-images img {
-      width: 280px;
-      border-radius: 12px;
+      width: 300px;
+      border-radius: 10px;
       border: 3px solid var(--accent);
       transition: transform 0.3s ease;
     }
@@ -128,14 +114,14 @@
 
     .btn-gallery {
       display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: var(--accent);
       color: var(--primary);
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
     .btn-gallery:hover {
@@ -144,20 +130,20 @@
 
     .button-container {
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       background-color: #005c6b;
     }
 
     .gallery-button {
       display: inline-block;
-      margin: 12px;
-      padding: 12px 24px;
+      margin: 10px;
+      padding: 10px 20px;
       background-color: var(--accent);
       color: var(--primary);
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
     .gallery-button:hover {
@@ -165,21 +151,21 @@
     }
 
     .services {
-      padding: 60px 20px;
+      padding: 40px 20px;
       background-color: var(--primary);
       text-align: center;
     }
 
     .services h2 {
       color: var(--accent);
-      margin-bottom: 40px;
-      font-size: 2.2em;
+      margin-bottom: 30px;
+      font-size: 2em;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      gap: 20px;
       max-width: 1000px;
       margin: auto;
     }
@@ -192,7 +178,7 @@
       text-align: center;
       font-size: 1.1em;
       font-weight: bold;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease;
     }
 
@@ -209,14 +195,14 @@
 
     .contact {
       background-color: #004e5a;
-      padding: 60px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .contact h2 {
       color: var(--accent);
-      margin-bottom: 30px;
-      font-size: 2.2em;
+      margin-bottom: 20px;
+      font-size: 2em;
     }
 
     .contact form {
@@ -224,32 +210,23 @@
       margin: auto;
       display: flex;
       flex-direction: column;
-      gap: 15px;
     }
 
     .contact input, .contact textarea {
-      padding: 12px;
+      padding: 10px;
+      margin: 10px 0;
       border: none;
-      border-radius: 8px;
-      background-color: #fff;
-      color: #000;
-      font-size: 1em;
+      border-radius: 5px;
     }
 
     .contact button {
-      padding: 12px;
+      padding: 10px;
       background-color: var(--accent);
       border: none;
-      border-radius: 8px;
+      border-radius: 5px;
       color: var(--primary);
       font-weight: bold;
-      font-size: 1em;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact button:hover {
-      background-color: #ffd166;
     }
 
     footer {
@@ -300,7 +277,7 @@
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole" />
+    <img src="images/logo.png" alt="Planet Tende da Sole">
     <h1>Planet Tende da Sole</h1>
     <p>Tende di un altro pianeta</p>
   </header>
@@ -315,8 +292,8 @@
   <section class="prima-dopo-preview">
     <h2>Prima & Dopo</h2>
     <div class="prima-dopo-images">
-      <img src="images/prima1.jpeg" alt="Prima 1" />
-      <img src="images/dopo1.jpeg" alt="Dopo 1" />
+      <img src="images/prima1.jpeg" alt="Prima 1">
+      <img src="images/dopo1.jpeg" alt="Dopo 1">
     </div>
     <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
   </section>
@@ -344,25 +321,26 @@
   <section class="contact">
     <h2>Contattaci</h2>
     <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" rows="5" placeholder="Messaggio" required></textarea>
+      <input type="text" name="name" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
       <button type="submit">Invia</button>
     </form>
   </section>
 
   <footer>
-    © 2025 Planet Tende da Sole. Tutti i diritti riservati. |
-    <a href="condizioni.html">Condizioni</a> |
-    <a href="privacy.html">Privacy</a> |
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | 
+    <a href="condizioni.html">Condizioni</a> | 
+    <a href="privacy.html">Privacy</a> | 
     Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
+  <!-- Botones flotantes -->
   <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
     <i class="fab fa-facebook-f"></i>
   </a>
 
-  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z/" target="_blank" class="maps-btn">
+  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z" target="_blank" class="maps-btn">
     <i class="fas fa-map-marker-alt"></i>
   </a>
 </body>

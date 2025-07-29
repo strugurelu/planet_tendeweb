@@ -18,6 +18,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -28,42 +29,54 @@
 
     header {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       background-color: var(--primary);
     }
 
     header img {
       max-width: 180px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
     }
 
     header h1 {
       color: var(--accent);
       margin-top: 10px;
-      font-size: 2em;
+      font-size: 2.4em;
     }
 
     header p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #eaeaea;
     }
 
     .hero {
-      position: relative;
       height: 300px;
       background: linear-gradient(to bottom, var(--accent), var(--primary));
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      position: relative;
     }
 
     .tenda {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: repeating-linear-gradient(45deg, var(--accent), var(--accent) 20px, var(--primary) 20px, var(--primary) 40px);
+      background: repeating-linear-gradient(
+        45deg,
+        var(--accent),
+        var(--accent) 20px,
+        var(--primary) 20px,
+        var(--primary) 40px
+      );
       animation: tendaAnim 3s infinite alternate;
       z-index: 1;
+      opacity: 0.2;
     }
 
     @keyframes tendaAnim {
@@ -78,19 +91,19 @@
     }
 
     .hero-text h2 {
-      font-size: 2em;
+      font-size: 2.5em;
       color: #fff;
     }
 
     .prima-dopo-preview {
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
       background-color: #005c6b;
     }
 
     .prima-dopo-preview h2 {
       color: var(--accent);
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-size: 2em;
     }
 
@@ -103,20 +116,21 @@
 
     .prima-dopo-images img {
       width: 300px;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 3px solid var(--accent);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s;
       cursor: pointer;
     }
 
     .prima-dopo-images img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 15px #00000080;
     }
 
     .btn-gallery {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 30px;
+      padding: 12px 24px;
       background-color: var(--accent);
       color: var(--primary);
       font-weight: bold;
@@ -131,28 +145,29 @@
 
     .button-container {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       background-color: #005c6b;
     }
 
     .gallery-button {
-      display: inline-block;
       margin: 10px;
-      padding: 10px 20px;
+      padding: 12px 20px;
       background-color: var(--accent);
       color: var(--primary);
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s;
+      transition: transform 0.3s, background-color 0.3s;
+      display: inline-block;
     }
 
     .gallery-button:hover {
       background-color: #ffd166;
+      transform: scale(1.05);
     }
 
     .services {
-      padding: 40px 20px;
+      padding: 60px 20px;
       background-color: var(--primary);
       text-align: center;
     }
@@ -166,7 +181,7 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      gap: 25px;
       max-width: 1000px;
       margin: auto;
     }
@@ -185,13 +200,50 @@
 
     .service-card i {
       font-size: 2.5em;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       display: block;
       color: var(--accent);
     }
 
     .service-card:hover {
       transform: translateY(-10px);
+    }
+
+    .contact {
+      background-color: #004e5a;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .contact form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      padding: 12px;
+      background-color: var(--accent);
+      border: none;
+      border-radius: 5px;
+      color: var(--primary);
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .testimonial-section {
@@ -213,12 +265,107 @@
       color: #fff;
       font-style: italic;
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--primary);
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .facebook-btn, .maps-btn {
+      position: fixed;
+      right: 20px;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.5em;
+      text-align: center;
+      z-index: 100;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      color: white;
+    }
+
+    .facebook-btn {
+      bottom: 20px;
+      background-color: #1877f2;
+    }
+
+    .facebook-btn:hover {
+      transform: scale(1.1);
+      background-color: #145db2;
+    }
+
+    .maps-btn {
+      bottom: 80px;
+      background-color: #34a853;
+    }
+
+    .maps-btn:hover {
+      transform: scale(1.1);
+      background-color: #2c8c44;
+    }
   </style>
 </head>
 <body>
-  <!-- Hero, Prima & Dopo, Servicios, etc. -->
 
-  <!-- Testimonios -->
+  <header>
+    <img src="images/logo.png" alt="Planet Tende da Sole">
+    <h1>Planet Tende da Sole</h1>
+    <p>Tende di un altro pianeta</p>
+  </header>
+
+  <section class="hero">
+    <div class="tenda"></div>
+    <div class="hero-text">
+      <h2>Protezione e Design per la Tua Casa</h2>
+    </div>
+  </section>
+
+  <section class="prima-dopo-preview">
+    <h2>Prima & Dopo</h2>
+    <div class="prima-dopo-images">
+      <img src="images/prima1.jpeg" alt="Prima 1">
+      <img src="images/dopo1.jpeg" alt="Dopo 1">
+    </div>
+    <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
+  </section>
+
+  <div class="button-container">
+    <a href="prima-dopo.html" class="gallery-button">Prima & Dopo</a>
+    <a href="tende-caduta.html" class="gallery-button">Tende a Caduta</a>
+    <a href="tende-a-braccia.html" class="gallery-button">Tende a Braccia</a>
+    <a href="cappottina.html" class="gallery-button">Cappottina</a>
+    <a href="pergoleestrutture.html" class="gallery-button">Pergole e Strutture</a>
+  </div>
+
+  <section class="services">
+    <h2>I Nostri Servizi</h2>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
+      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
+      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
+      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
+      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
+      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contattaci</h2>
+    <form action="https://formspree.io/f/myzpkonj" method="POST">
+      <input type="text" name="name" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
   <section class="testimonial-section">
     <h2>Dicono di noi</h2>
     <div class="testimonial-slider" id="testimonial">
@@ -226,6 +373,21 @@
       <strong>- Marco R.</strong>
     </div>
   </section>
+
+  <footer>
+    © 2025 Planet Tende da Sole. Tutti i diritti riservati. | 
+    <a href="condizioni.html">Condizioni</a> | 
+    <a href="privacy.html">Privacy</a> | 
+    Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
+  </footer>
+
+  <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://www.google.com/maps/place/Planet+Tende/" target="_blank" class="maps-btn">
+    <i class="fas fa-map-marker-alt"></i>
+  </a>
 
   <script>
     const testi = [
@@ -239,5 +401,6 @@
       document.getElementById("testimonial").innerHTML = testi[i];
     }, 2000);
   </script>
+
 </body>
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Tende da Sole</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
       --primary: #0b6983;
       --accent: #f9b233;
-      --dark: #004e5a;
+      --dark: #0b6983;
     }
 
     * {
@@ -23,96 +23,90 @@
     body {
       background-color: var(--dark);
       color: #fff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      line-height: 1.5;
     }
 
     header {
       text-align: center;
+      padding: 20px;
       background-color: var(--primary);
-      padding: 30px 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     header img {
-      max-width: 160px;
+      max-width: 180px;
     }
 
     header h1 {
       color: var(--accent);
-      font-size: 2.4em;
       margin-top: 10px;
+      font-size: 2em;
     }
 
     header p {
-      color: #e0e0e0;
       font-size: 1.1em;
+      color: #eaeaea;
     }
 
     .hero {
-      background: linear-gradient(to bottom right, var(--accent), var(--primary));
-      padding: 80px 20px;
-      text-align: center;
       position: relative;
+      height: 300px;
+      background: linear-gradient(to bottom, var(--accent), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
 
-    .hero::after {
-      content: "";
+    .tenda {
       position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 200%;
-      height: 200%;
-      background: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.05),
-        rgba(255,255,255,0.05) 15px,
-        transparent 15px,
-        transparent 30px
-      );
-      z-index: 0;
-      animation: moveBg 10s linear infinite;
-    }
-
-    @keyframes moveBg {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50px); }
-    }
-
-    .hero h2 {
-      position: relative;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, var(--accent), var(--accent) 20px, var(--primary) 20px, var(--primary) 40px);
+      animation: tendaAnim 3s infinite alternate;
       z-index: 1;
-      font-size: 2em;
-      color: white;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
-    .prima-dopo-preview {
-      background-color: #005c6b;
-      padding: 60px 20px;
+    @keyframes tendaAnim {
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(10%); }
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
       text-align: center;
     }
 
+    .hero-text h2 {
+      font-size: 2em;
+      color: #fff;
+    }
+
+    .prima-dopo-preview {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #005c6b;
+    }
+
     .prima-dopo-preview h2 {
-      font-size: 2.2em;
       color: var(--accent);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      font-size: 2em;
     }
 
     .prima-dopo-images {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .prima-dopo-images img {
       width: 300px;
       border-radius: 10px;
       border: 3px solid var(--accent);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .prima-dopo-images img:hover {
@@ -120,14 +114,15 @@
     }
 
     .btn-gallery {
-      margin-top: 25px;
-      padding: 12px 24px;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: var(--accent);
       color: var(--primary);
       font-weight: bold;
-      border-radius: 8px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
     .btn-gallery:hover {
@@ -135,9 +130,9 @@
     }
 
     .button-container {
-      background-color: #005c6b;
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px;
+      background-color: #005c6b;
     }
 
     .gallery-button {
@@ -157,187 +152,92 @@
     }
 
     .services {
+      padding: 40px 20px;
       background-color: var(--primary);
-      padding: 60px 20px;
       text-align: center;
     }
 
     .services h2 {
-      font-size: 2.2em;
       color: var(--accent);
       margin-bottom: 30px;
+      font-size: 2em;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      gap: 20px;
       max-width: 1000px;
       margin: auto;
     }
 
     .service-card {
       background: linear-gradient(145deg, var(--primary), #008a9e);
+      color: #fff;
       padding: 30px 20px;
       border-radius: 15px;
-      color: #fff;
       text-align: center;
+      font-size: 1.1em;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card i {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      display: block;
+      color: var(--accent);
     }
 
     .service-card:hover {
       transform: translateY(-10px);
     }
 
-    .service-card i {
-      font-size: 2.5em;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .contact {
-      background-color: #004e5a;
+    .testimonial-section {
+      background: #ffffff10;
       padding: 60px 20px;
       text-align: center;
     }
 
-    .contact h2 {
+    .testimonial-section h2 {
       color: var(--accent);
       font-size: 2em;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .contact form {
-      max-width: 500px;
+    .testimonial-slider {
+      max-width: 700px;
       margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      font-size: 1.1em;
+      color: #fff;
+      font-style: italic;
     }
-
-    .contact input, .contact textarea {
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1em;
-    }
-
-    .contact button {
-      background: var(--accent);
-      color: var(--primary);
-      font-weight: bold;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: var(--primary);
-      padding: 20px;
-      text-align: center;
-      color: #ccc;
-      font-size: 0.9em;
-    }
-
-    footer a {
-      color: #ccc;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .facebook-btn, .maps-btn {
-      position: fixed;
-      right: 20px;
-      padding: 15px;
-      border-radius: 50%;
-      font-size: 1.5em;
-      color: white;
-      z-index: 100;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .facebook-btn {
-      bottom: 20px;
-      background-color: #1877f2;
-    }
-
-    .maps-btn {
-      bottom: 80px;
-      background-color: #34a853;
-    }
-
-    .facebook-btn:hover { transform: scale(1.1); background: #145db2; }
-    .maps-btn:hover { transform: scale(1.1); background: #2c8c44; }
   </style>
 </head>
 <body>
+  <!-- Hero, Prima & Dopo, Servicios, etc. -->
 
-  <header>
-    <img src="images/logo.png" alt="Planet Tende da Sole">
-    <h1>Planet Tende da Sole</h1>
-    <p>Tende di un altro pianeta</p>
-  </header>
-
-  <section class="hero">
-    <h2>Protezione e Design per la Tua Casa</h2>
-  </section>
-
-  <section class="prima-dopo-preview">
-    <h2>Prima & Dopo</h2>
-    <div class="prima-dopo-images">
-      <img src="images/prima1.jpeg" alt="Prima 1">
-      <img src="images/dopo1.jpeg" alt="Dopo 1">
-    </div>
-    <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
-  </section>
-
-  <div class="button-container">
-    <a href="prima-dopo.html" class="gallery-button">Prima & Dopo</a>
-    <a href="tende-caduta.html" class="gallery-button">Tende a Caduta</a>
-    <a href="tende-a-braccia.html" class="gallery-button">Tende a Braccia</a>
-    <a href="cappottina.html" class="gallery-button">Cappottina</a>
-    <a href="pergoleestrutture.html" class="gallery-button">Pergole e Strutture</a>
-  </div>
-
-  <section class="services">
-    <h2>I Nostri Servizi</h2>
-    <div class="services-grid">
-      <div class="service-card"><i class="fas fa-sun"></i><p>Tende da sole</p></div>
-      <div class="service-card"><i class="fas fa-sync-alt"></i><p>Cambio tessuto</p></div>
-      <div class="service-card"><i class="fas fa-bug"></i><p>Zanzariere</p></div>
-      <div class="service-card"><i class="fas fa-warehouse"></i><p>Coperture in PVC</p></div>
-      <div class="service-card"><i class="fas fa-tree"></i><p>Pergole</p></div>
-      <div class="service-card"><i class="fas fa-sliders-h"></i><p>Veneziane</p></div>
+  <!-- Testimonios -->
+  <section class="testimonial-section">
+    <h2>Dicono di noi</h2>
+    <div class="testimonial-slider" id="testimonial">
+      "Servizio impeccabile e tende di altissima qualità!"<br><br>
+      <strong>- Marco R.</strong>
     </div>
   </section>
 
-  <section class="contact">
-    <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
-  </section>
-
-  <footer>
-    © 2025 Planet Tende da Sole | 
-    <a href="condizioni.html">Condizioni</a> | 
-    <a href="privacy.html">Privacy</a> | 
-    Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
-  </footer>
-
-  <!-- Botones flotantes -->
-  <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z" target="_blank" class="maps-btn">
-    <i class="fas fa-map-marker-alt"></i>
-  </a>
-
+  <script>
+    const testi = [
+      '"Servizio impeccabile e tende di altissima qualità!"<br><br><strong>- Marco R.</strong>',
+      '"Installazione veloce e personale molto gentile."<br><br><strong>- Laura M.</strong>',
+      '"Design elegante, materiali resistenti. Consigliati!"<br><br><strong>- Federico T.</strong>'
+    ];
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % testi.length;
+      document.getElementById("testimonial").innerHTML = testi[i];
+    }, 2000);
+  </script>
 </body>
 </html>

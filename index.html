@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
-      --primary: #006D7F;
-      --accent: #f9b233;
+      --primary: #0b6983;
+      --accent: #ffbd20;
+      --light: #fdfcfd;
       --dark: #004e5a;
     }
 
@@ -50,22 +51,44 @@
     .hero {
       position: relative;
       height: 300px;
-      background-color: #ffbd20;
+      background-color: var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      text-align: center;
     }
 
     .hero-text {
-      position: relative;
       z-index: 2;
-      text-align: center;
     }
 
     .hero-text h2 {
       font-size: 2em;
-      color: #0b6983;
+      color: var(--primary);
+    }
+
+    .about {
+      background-color: var(--light);
+      color: var(--primary);
+      padding: 40px 20px;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2em;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 15px;
     }
 
     .prima-dopo-preview {
@@ -179,42 +202,6 @@
       transform: translateY(-10px);
     }
 
-    .contact {
-      background-color: #004e5a;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      color: var(--accent);
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-
-    .contact form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact input, .contact textarea {
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .contact button {
-      padding: 10px;
-      background-color: var(--accent);
-      border: none;
-      border-radius: 5px;
-      color: var(--primary);
-      font-weight: bold;
-      cursor: pointer;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -274,6 +261,20 @@
     </div>
   </section>
 
+  <section class="about">
+    <div class="about-container">
+      <h2>Chi siamo</h2>
+      <p>
+        Planet Tende è un'azienda italiana specializzata nella progettazione, produzione e installazione di tende da sole e zanzariere personalizzate. 
+        Con oltre 15 anni di esperienza nel settore, ci distinguiamo per la qualità dei materiali utilizzati e l'attenzione ai dettagli.
+      </p>
+      <p>
+        La nostra missione è trasformare gli spazi esterni in ambienti confortevoli e funzionali, 
+        offrendo soluzioni innovative che combinano estetica, durabilità e tecnologia avanzata.
+      </p>
+    </div>
+  </section>
+
   <section class="prima-dopo-preview">
     <h2>Prima & Dopo</h2>
     <div class="prima-dopo-images">
@@ -303,16 +304,6 @@
     </div>
   </section>
 
-  <section class="contact">
-    <h2>Contattaci</h2>
-    <form action="https://formspree.io/f/myzpkonj" method="POST">
-      <input type="text" name="name" placeholder="Nome" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Messaggio" rows="5" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
-  </section>
-
   <footer>
     © 2025 Planet Tende da Sole. Tutti i diritti riservati. | 
     <a href="condizioni.html">Condizioni</a> | 
@@ -324,7 +315,7 @@
     <i class="fab fa-facebook-f"></i>
   </a>
 
-  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z/data=!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp?hl=es&entry=ttu&g_ep=EgoyMDI1MDcyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="maps-btn">
+  <a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z/data=!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp" target="_blank" class="maps-btn">
     <i class="fas fa-map-marker-alt"></i>
   </a>
 </body>

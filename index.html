@@ -50,31 +50,11 @@
     .hero {
       position: relative;
       height: 300px;
-      background: linear-gradient(to bottom, var(--accent), var(--primary));
+      background-color: #ffbd20;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-    }
-
-    .tenda {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        45deg,
-        var(--accent),
-        var(--accent) 20px,
-        var(--primary) 20px,
-        var(--primary) 40px
-      );
-      animation: tendaAnim 3s infinite alternate;
-      z-index: 1;
-    }
-
-    @keyframes tendaAnim {
-      0% { transform: translateY(-10%); }
-      100% { transform: translateY(10%); }
     }
 
     .hero-text {
@@ -85,10 +65,9 @@
 
     .hero-text h2 {
       font-size: 2em;
-      color: #fff;
+      color: #0b6983;
     }
 
-    /* --- PRIMA & DOPO --- */
     .prima-dopo-preview {
       text-align: center;
       padding: 40px 20px;
@@ -135,7 +114,6 @@
       background-color: #ffd166;
     }
 
-    /* --- BOTONES GALERÍA --- */
     .button-container {
       text-align: center;
       padding: 20px;
@@ -158,7 +136,6 @@
       background-color: #ffd166;
     }
 
-    /* --- SERVIZI --- */
     .services {
       padding: 40px 20px;
       background-color: var(--primary);
@@ -202,7 +179,6 @@
       transform: translateY(-10px);
     }
 
-    /* --- CONTACT --- */
     .contact {
       background-color: #004e5a;
       padding: 40px 20px;
@@ -276,7 +252,7 @@
 
     .maps-btn {
       bottom: 80px;
-      background-color: #34a853; /* Color de Google Maps */
+      background-color: #34a853;
     }
 
     .maps-btn:hover {
@@ -293,13 +269,11 @@
   </header>
 
   <section class="hero">
-    <div class="tenda"></div>
     <div class="hero-text">
       <h2>Protezione e Design per la Tua Casa</h2>
     </div>
   </section>
 
-  <!-- SECCION PRIMA & DOPO PREVIEW -->
   <section class="prima-dopo-preview">
     <h2>Prima & Dopo</h2>
     <div class="prima-dopo-images">
@@ -309,7 +283,6 @@
     <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
   </section>
 
-  <!-- BOTONES GALERÍAS -->
   <div class="button-container">
     <a href="prima-dopo.html" class="gallery-button">Prima & Dopo</a>
     <a href="tende-caduta.html" class="gallery-button">Tende a Caduta</a>
@@ -347,7 +320,6 @@
     Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
   </footer>
 
-  <!-- Botones flotantes -->
   <a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
     <i class="fab fa-facebook-f"></i>
   </a>

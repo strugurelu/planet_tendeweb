@@ -79,14 +79,6 @@ section {padding:60px 20px;}
 .about h2 {font-size:2em;margin-bottom:20px;}
 .about p {margin-bottom:15px;font-size:1.1em;line-height:1.6;}
 
-.prima-dopo-preview {background-color:#005c6b;text-align:center;color:#fff;}
-.prima-dopo-preview h2 {font-size:2em;color:var(--accent);margin-bottom:20px;}
-.prima-dopo-images {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
-.prima-dopo-images img {width:300px;border-radius:10px;border:3px solid var(--accent);transition:transform 0.3s;}
-.prima-dopo-images img:hover {transform:scale(1.05);}
-.btn-gallery {margin-top:20px;padding:10px 20px;background-color:var(--accent);color:var(--primary);font-weight:bold;border-radius:8px;display:inline-block;transition:0.3s;}
-.btn-gallery:hover {background-color:var(--hover);}
-
 .services {background-color:var(--primary);text-align:center;color:#fff;}
 .services h2 {font-size:2em;color:var(--accent);margin-bottom:30px;}
 .services-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1000px;margin:0 auto;}
@@ -107,7 +99,6 @@ footer {background-color:var(--primary);text-align:center;color:#ccc;padding:20p
 footer a {color:#ccc;transition:color 0.3s;}
 footer a:hover {color:var(--accent);}
 
-/* Slider botones opcionales */
 .hero-nav {position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;}
 .hero-nav button {width:15px;height:15px;border-radius:50%;border:none;background:#fff;opacity:0.5;cursor:pointer;transition:opacity 0.3s;}
 .hero-nav button.active, .hero-nav button:hover {opacity:1;}
@@ -119,16 +110,16 @@ footer a:hover {color:var(--accent);}
   <img src="images/logo.png" alt="Planet Tende da Sole">
   <nav>
     <a href="#about">Chi siamo</a>
-    <a href="#prima-dopo">Prima & Dopo</a>
+    <a href="galeria.html">Galleria</a>
     <a href="#services">Servizi</a>
     <a href="#contact">Contatto</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-slide active" style="background-image:url('images/prima1.jpeg');"></div>
-  <div class="hero-slide" style="background-image:url('images/dopo1.jpeg');"></div>
-  <div class="hero-slide" style="background-image:url('images/Cappottina1.jpeg');"></div>
+  <div class="hero-slide active" style="background-image:url('images/Cappottina1.jpeg');"></div>
+  <div class="hero-slide" style="background-image:url('images/Pergoleestrutture1.jpeg');"></div>
+  <div class="hero-slide" style="background-image:url('images/tendabraccia1.jpeg');"></div>
   <div class="hero-text">
     <h1>Protezione e Design per la Tua Casa</h1>
     <p>Soluzioni italiane premium, innovative e eleganti</p>
@@ -142,17 +133,8 @@ footer a:hover {color:var(--accent);}
 
 <section id="about" class="about">
   <h2>Chi siamo</h2>
-  <p>Planet Tende è un'azienda italiana specializzata nella progettazione, produzione e installazione di tende da sole e zanzariere personalizzate. Con oltre 15 anni di esperienza nel settore, ci distinguiamo per la qualità dei materiali utilizzati e l'attenzione ai dettagli.</p>
-  <p>La nostra missione è trasformare gli spazi esterni in ambienti confortevoli e funzionali, offrendo soluzioni innovative che combinano estetica, durabilità e tecnologia avanzata.</p>
-</section>
-
-<section id="prima-dopo" class="prima-dopo-preview">
-  <h2>Prima & Dopo</h2>
-  <div class="prima-dopo-images">
-    <img src="images/prima1.jpeg" alt="Prima 1">
-    <img src="images/dopo1.jpeg" alt="Dopo 1">
-  </div>
-  <a href="prima-dopo.html" class="btn-gallery">Vedi di più</a>
+  <p>Planet Tende è un'azienda italiana specializzata nella progettazione, produzione e installazione di tende da sole e zanzariere personalizzate. Con oltre 15 anni di esperienza, ci distinguiamo per qualità e attenzione ai dettagli.</p>
+  <p>Trasformiamo gli spazi esterni in ambienti confortevoli e funzionali, combinando estetica, durabilità e tecnologia avanzata.</p>
 </section>
 
 <section id="services" class="services">
@@ -185,30 +167,18 @@ footer a:hover {color:var(--accent);}
   Powered by <a href="https://strgrweb.com" target="_blank">strgrweb.com</a>
 </footer>
 
-<!-- Facebook & Maps Buttons -->
-<a href="https://www.facebook.com/share/1CMchz29Wi/?mibextid=wwXIfr" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#1877f2;color:#fff;padding:15px;border-radius:50%;font-size:1.5em;z-index:100;"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.google.com/maps/place/Planet+Tende/@45.7718911,12.7318259,17.29z/data=!4m6!3m5!1s0x477be13021a31e1f:0x4c138877361c022f!8m2!3d45.7718082!4d12.7317611!16s%2Fg%2F11y7y83yxp" target="_blank" style="position:fixed;bottom:80px;right:20px;background:#34a853;color:#fff;padding:15px;border-radius:50%;font-size:1.5em;z-index:100;"><i class="fas fa-map-marker-alt"></i></a>
-
 <script>
-// Slider automático
 let slides = document.querySelectorAll('.hero-slide');
 let buttons = document.querySelectorAll('.hero-nav button');
 let current = 0;
-
 function showSlide(index) {
   slides.forEach((s,i)=>s.classList.remove('active'));
   buttons.forEach((b,i)=>b.classList.remove('active'));
   slides[index].classList.add('active');
   buttons[index].classList.add('active');
 }
-
 buttons.forEach((btn,i)=>btn.addEventListener('click',()=>{current=i;showSlide(current);}));
-
-setInterval(()=>{
-  current = (current+1)%slides.length;
-  showSlide(current);
-},5000);
+setInterval(()=>{current=(current+1)%slides.length;showSlide(current);},5000);
 </script>
-
 </body>
 </html>
